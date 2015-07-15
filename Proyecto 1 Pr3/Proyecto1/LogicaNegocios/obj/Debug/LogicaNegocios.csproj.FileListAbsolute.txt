@@ -1,0 +1,5 @@
+C:\Users\Jenn\Desktop\Proyecto 1 Pr3\Proyecto1\LogicaNegocios\bin\Debug\LogicaNegocios.dll
+C:\Users\Jenn\Desktop\Proyecto 1 Pr3\Proyecto1\LogicaNegocios\bin\Debug\LogicaNegocios.pdb
+C:\Users\Jenn\Desktop\Proyecto 1 Pr3\Proyecto1\LogicaNegocios\obj\Debug\LogicaNegocios.dll
+C:\Users\Jenn\Desktop\Proyecto 1 Pr3\Proyecto1\LogicaNegocios\obj\Debug\LogicaNegocios.pdb
+C:\Users\Jenn\Desktop\Proyecto 1 Pr3\Proyecto1\LogicaNegocios\obj\Debug\LogicaNegocios.csprojResolveAssemblyReference.cache
