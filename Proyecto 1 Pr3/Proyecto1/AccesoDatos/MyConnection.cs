@@ -22,7 +22,7 @@ using System.Data.SqlClient;
 
 namespace AccesoDatos
 {
-    class MyConnection
+    public class MyConnection
     {    //private string sqlConnection = "Data Source=RobertoDesktop;Initial Catalog=Flights;User ID=sa;Password=123456";
         private string sqlConnection = "Data Source=NANI\\SQLEXPRESS;Initial Catalog=Flights; User ID=user;Password=12345";
 

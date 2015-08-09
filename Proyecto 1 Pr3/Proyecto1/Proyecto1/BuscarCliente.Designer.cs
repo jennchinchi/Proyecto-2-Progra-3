@@ -85,9 +85,9 @@
             this.label7.ForeColor = System.Drawing.Color.Transparent;
             this.label7.Location = new System.Drawing.Point(97, 140);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 16);
+            this.label7.Size = new System.Drawing.Size(53, 16);
             this.label7.TabIndex = 135;
-            this.label7.Text = "NOMBRE:";
+            this.label7.Text = "NAME:";
             // 
             // txtBId
             // 
@@ -110,12 +110,12 @@
             // 
             // tipo
             // 
-            this.tipo.Text = "Tipo";
+            this.tipo.Text = "TYPE";
             this.tipo.Width = 71;
             // 
             // nombre
             // 
-            this.nombre.Text = "Nombre";
+            this.nombre.Text = "NAME";
             this.nombre.Width = 83;
             // 
             // id
@@ -145,7 +145,7 @@
             // 
             // email
             // 
-            this.email.Text = "Email";
+            this.email.Text = "EMAIL";
             this.email.Width = 104;
             // 
             // btnAgregar
@@ -175,16 +175,16 @@
             this.label8.ForeColor = System.Drawing.Color.DimGray;
             this.label8.Location = new System.Drawing.Point(622, 283);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 19);
+            this.label8.Size = new System.Drawing.Size(64, 19);
             this.label8.TabIndex = 152;
-            this.label8.Text = "Millas:";
+            this.label8.Text = "MILES:";
             // 
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
+            "Active",
+            "Inactive"});
             this.cmbEstado.Location = new System.Drawing.Point(686, 228);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(106, 21);
@@ -207,9 +207,9 @@
             this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(631, 255);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 19);
+            this.label1.Size = new System.Drawing.Size(57, 19);
             this.label1.TabIndex = 149;
-            this.label1.Text = "Tipo:";
+            this.label1.Text = "TYPE:";
             // 
             // cmbTipo
             // 
@@ -226,11 +226,11 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(599, 199);
+            this.label6.Location = new System.Drawing.Point(611, 199);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 19);
+            this.label6.Size = new System.Drawing.Size(73, 19);
             this.label6.TabIndex = 147;
-            this.label6.Text = "Teléfono:";
+            this.label6.Text = "PHONE:";
             // 
             // txtEmail
             // 
@@ -247,11 +247,11 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(381, 283);
+            this.label5.Location = new System.Drawing.Point(387, 283);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 19);
+            this.label5.Size = new System.Drawing.Size(64, 19);
             this.label5.TabIndex = 145;
-            this.label5.Text = "Email:";
+            this.label5.Text = "EMAIL:";
             // 
             // label2
             // 
@@ -259,11 +259,11 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(611, 227);
+            this.label2.Location = new System.Drawing.Point(622, 227);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 19);
+            this.label2.Size = new System.Drawing.Size(66, 19);
             this.label2.TabIndex = 144;
-            this.label2.Text = "Estado:";
+            this.label2.Text = "STATE:";
             // 
             // txtNombre
             // 
@@ -298,7 +298,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(407, 199);
+            this.label3.Location = new System.Drawing.Point(420, 200);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 19);
             this.label3.TabIndex = 140;
@@ -310,11 +310,11 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(361, 255);
+            this.label9.Location = new System.Drawing.Point(347, 255);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 19);
+            this.label9.Size = new System.Drawing.Size(104, 19);
             this.label9.TabIndex = 139;
-            this.label9.Text = "Apellido:";
+            this.label9.Text = "LASTNAME:";
             // 
             // label10
             // 
@@ -322,11 +322,11 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(362, 227);
+            this.label10.Location = new System.Drawing.Point(389, 227);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(76, 19);
+            this.label10.Size = new System.Drawing.Size(62, 19);
             this.label10.TabIndex = 138;
-            this.label10.Text = "Nombre:";
+            this.label10.Text = "NAME:";
             // 
             // BuscarCliente
             // 
@@ -358,7 +358,7 @@
             this.Controls.Add(this.listClientes);
             this.Controls.Add(this.btnAgregar);
             this.Name = "BuscarCliente";
-            this.Text = "BuscarCliente";
+            this.Text = "SEARCH CLIENT";
             this.Load += new System.EventHandler(this.BuscarCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingClientes)).EndInit();
             this.ResumeLayout(false);

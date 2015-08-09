@@ -62,7 +62,7 @@ namespace Presentacion
             string resultado = Gestor.agregarVuelo(idAvion, origen, destino, horaPartida, horaLlegada, precio);
             if(resultado.Equals("True"))
             {
-                MessageBox.Show("VUELO REGISTRADO SATISFACTORIAMENTE", "UAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("FLIGHT ADDED", "UAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
             }
             else

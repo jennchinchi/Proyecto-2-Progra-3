@@ -47,7 +47,7 @@
             this.ClientSize = new System.Drawing.Size(510, 395);
             this.Controls.Add(this.webBrowser);
             this.Name = "Trayectoria";
-            this.Text = "Trayectoria";
+            this.Text = "PATH";
             this.Load += new System.EventHandler(this.Trayectoria_Load);
             this.ResumeLayout(false);
 

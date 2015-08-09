@@ -32,14 +32,14 @@ namespace Presentacion
         public AgregarTiquete()
         {
             InitializeComponent();
-            cmbEstado.Items.Add("Pendiente");
-            cmbEstado.Items.Add("Pago");
+            cmbEstado.Items.Add("Active");
+            cmbEstado.Items.Add("Inactive");
             cmbEstado.SelectedIndex = 0;
         }
         private void AgregarTiquete_Load(object sender, EventArgs e)
         {
             Dictionary<int,string> comboSource = new Dictionary<int,string>();
-            comboSource.Add(1, "Dolares");
+            comboSource.Add(1, "Dolars");
             comboSource.Add(2, "Colones");
             cmbMoneda.DataSource = new BindingSource(comboSource, null);
             cmbMoneda.DisplayMember = "Value";
@@ -115,7 +115,7 @@ namespace Presentacion
             string resultado = Gestor.agregarTiquete(estado, selectedC, idVuelo, moneda, asiento);
             if (resultado.Equals("True"))
             {
-                MessageBox.Show("TIQUETE REGISTRADO SATISFACTORIAMENTE", "UAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("TICKET ADDED", "UAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
             }
             else

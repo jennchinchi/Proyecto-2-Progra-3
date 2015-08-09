@@ -16,6 +16,8 @@ using System.Threading.Tasks;
 using LogicaNegocios;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.Linq;
+using System.Data.Linq.Mapping;
 
 namespace AccesoDatos
 {
@@ -91,38 +93,46 @@ namespace AccesoDatos
         {
             List<Tiquete> listaTiquete = new List<Tiquete>();
             MyConnection myConnection = new MyConnection();
-            SqlConnection conexion = myConnection.CreateConnection();
-            SqlCommand comando = myConnection.CreateCommand(conexion);
-            SqlDataReader ti;
+            DataContext datacontext = new DataContext(myConnection.SQLConnection);
+            var table = datacontext.GetTable<Tiquete>();
+            //SqlConnection conexion = myConnection.CreateConnection();
+            //SqlCommand comando = myConnection.CreateCommand(conexion);
+            //SqlDataReader ti;
 
-            comando.CommandText = "sp_listTickets";
-            comando.CommandType = CommandType.StoredProcedure;
+            //comando.CommandText = "sp_listTickets";
+            //comando.CommandType = CommandType.StoredProcedure;
             try
             {
-                conexion.Open();
-                ti = comando.ExecuteReader();
-                while (ti.Read())
+                var listTickets = from lt in table
+                                  select lt;
+                foreach (Tiquete creatiquete in listTickets)
                 {
-                    Tiquete creatiquete = new Tiquete();
-                    creatiquete.IdTiquete = (int)ti["idTiquete"];
-                    creatiquete.Moneda = (int)ti["moneda"];
-                    creatiquete.Estado = (string)ti["estado"];
-                    creatiquete.IdCliente = (string)ti["cliente"];
-                    creatiquete.IdVuelo = (int)ti["vuelo"];
-                    creatiquete.Asiento = (int)ti["asiento"];
-
                     listaTiquete.Add(creatiquete);
-
                 }
+                //    conexion.Open();
+                //ti = comando.ExecuteReader();
+                //while (ti.Read())
+                //{
+                //    Tiquete creatiquete = new Tiquete();
+                //    creatiquete.IdTiquete = (int)ti["idTiquete"];
+                //    creatiquete.Moneda = (int)ti["moneda"];
+                //    creatiquete.Estado = (string)ti["estado"];
+                //    creatiquete.IdCliente = (string)ti["cliente"];
+                //    creatiquete.IdVuelo = (int)ti["vuelo"];
+                //    creatiquete.Asiento = (int)ti["asiento"];
+
+                //    listaTiquete.Add(creatiquete);
+
+                //}
             }
             catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            finally
-            {
-                conexion.Close();
-            }
+            //finally
+            //{
+            //    conexion.Close();
+            //}
             return listaTiquete;
         }
 

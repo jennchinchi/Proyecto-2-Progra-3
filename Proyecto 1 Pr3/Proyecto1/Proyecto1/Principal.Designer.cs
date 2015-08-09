@@ -59,21 +59,21 @@
             this.agregarClienteToolStripMenuItem,
             this.buecarClienteToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.clientesToolStripMenuItem.Text = "CLIENTS";
             // 
             // agregarClienteToolStripMenuItem
             // 
             this.agregarClienteToolStripMenuItem.Name = "agregarClienteToolStripMenuItem";
-            this.agregarClienteToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.agregarClienteToolStripMenuItem.Text = "Agregar Cliente";
+            this.agregarClienteToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.agregarClienteToolStripMenuItem.Text = "ADD CLIENT";
             this.agregarClienteToolStripMenuItem.Click += new System.EventHandler(this.agregarClienteToolStripMenuItem_Click);
             // 
             // buecarClienteToolStripMenuItem
             // 
             this.buecarClienteToolStripMenuItem.Name = "buecarClienteToolStripMenuItem";
-            this.buecarClienteToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.buecarClienteToolStripMenuItem.Text = "Buscar Cliente";
+            this.buecarClienteToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.buecarClienteToolStripMenuItem.Text = "SEARCH CLIENT";
             this.buecarClienteToolStripMenuItem.Click += new System.EventHandler(this.buscarClienteToolStripMenuItem_Click);
             // 
             // vuelosToolStripMenuItem
@@ -82,21 +82,21 @@
             this.agregarVuelosToolStripMenuItem,
             this.buscarVueloToolStripMenuItem});
             this.vuelosToolStripMenuItem.Name = "vuelosToolStripMenuItem";
-            this.vuelosToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.vuelosToolStripMenuItem.Text = "Vuelos";
+            this.vuelosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.vuelosToolStripMenuItem.Text = "FLIGHTS";
             // 
             // agregarVuelosToolStripMenuItem
             // 
             this.agregarVuelosToolStripMenuItem.Name = "agregarVuelosToolStripMenuItem";
-            this.agregarVuelosToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.agregarVuelosToolStripMenuItem.Text = "Agregar Vuelo";
+            this.agregarVuelosToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.agregarVuelosToolStripMenuItem.Text = "ADD FLIGHT";
             this.agregarVuelosToolStripMenuItem.Click += new System.EventHandler(this.agregarVuelosToolStripMenuItem_Click);
             // 
             // buscarVueloToolStripMenuItem
             // 
             this.buscarVueloToolStripMenuItem.Name = "buscarVueloToolStripMenuItem";
-            this.buscarVueloToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.buscarVueloToolStripMenuItem.Text = "Buscar Vuelo";
+            this.buscarVueloToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.buscarVueloToolStripMenuItem.Text = "SEARCH FLIGHT";
             this.buscarVueloToolStripMenuItem.Click += new System.EventHandler(this.buscarVueloToolStripMenuItem_Click);
             // 
             // tiquetesToolStripMenuItem
@@ -105,21 +105,21 @@
             this.comprarTiqueteToolStripMenuItem,
             this.buscarTiqueteToolStripMenuItem});
             this.tiquetesToolStripMenuItem.Name = "tiquetesToolStripMenuItem";
-            this.tiquetesToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.tiquetesToolStripMenuItem.Text = "Tiquetes";
+            this.tiquetesToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.tiquetesToolStripMenuItem.Text = "TICKETS";
             // 
             // comprarTiqueteToolStripMenuItem
             // 
             this.comprarTiqueteToolStripMenuItem.Name = "comprarTiqueteToolStripMenuItem";
-            this.comprarTiqueteToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.comprarTiqueteToolStripMenuItem.Text = "Comprar Tiquete";
+            this.comprarTiqueteToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.comprarTiqueteToolStripMenuItem.Text = "BUY TICKET";
             this.comprarTiqueteToolStripMenuItem.Click += new System.EventHandler(this.comprarTiqueteToolStripMenuItem_Click);
             // 
             // buscarTiqueteToolStripMenuItem
             // 
             this.buscarTiqueteToolStripMenuItem.Name = "buscarTiqueteToolStripMenuItem";
-            this.buscarTiqueteToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.buscarTiqueteToolStripMenuItem.Text = "Buscar Tiquete";
+            this.buscarTiqueteToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.buscarTiqueteToolStripMenuItem.Text = "SEARCH TICKET";
             this.buscarTiqueteToolStripMenuItem.Click += new System.EventHandler(this.buscarTiqueteToolStripMenuItem_Click);
             // 
             // Principal
@@ -131,7 +131,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Principal";
-            this.Text = "Principal";
+            this.Text = "MAIN MENU";
             this.Load += new System.EventHandler(this.Principal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

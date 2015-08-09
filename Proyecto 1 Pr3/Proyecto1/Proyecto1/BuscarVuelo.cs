@@ -108,7 +108,7 @@ namespace Presentacion
             string resultado = Gestor.modificarVuelo(selectedV);
             if (resultado.Equals("True"))
             {
-                MessageBox.Show("VUELO ACTUALIZADO SATISFACTORIAMENTE", "UAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("FLIGHT ADDED", "UAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnBuscar_Click(null, null);
             }
             else

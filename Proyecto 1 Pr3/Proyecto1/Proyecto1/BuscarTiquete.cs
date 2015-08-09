@@ -34,8 +34,8 @@ namespace Presentacion
         public BuscarTiquete()
         {
             InitializeComponent();
-            cmbEstado.Items.Add("Pendiente");
-            cmbEstado.Items.Add("Pago");
+            cmbEstado.Items.Add("Active");
+            cmbEstado.Items.Add("Inactive");
             cmbEstado.SelectedIndex = 0;
         }
 
@@ -57,7 +57,7 @@ namespace Presentacion
         private void BuscarTiquete_Load(object sender, EventArgs e)
         {
             Dictionary<int, string> comboSource = new Dictionary<int, string>();
-            comboSource.Add(1, "Dolares");
+            comboSource.Add(1, "Dolars");
             comboSource.Add(2, "Colones");
             cmbMoneda.DataSource = new BindingSource(comboSource, null);
             cmbMoneda.DisplayMember = "Value";
@@ -150,13 +150,83 @@ namespace Presentacion
             string resultado = Gestor.modificarTiquete(selectedT);
             if (resultado.Equals("True"))
             {
-                MessageBox.Show("TIQUETE ACTUALIZADO SATISFACTORIAMENTE", "UAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("TICKET UPDATED", "UAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnBuscar_Click(null, null);
             }
             else
             {
                 MessageBox.Show(resultado, "UAM", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbAsiento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbltCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbldescuento_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPrecio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
 
        

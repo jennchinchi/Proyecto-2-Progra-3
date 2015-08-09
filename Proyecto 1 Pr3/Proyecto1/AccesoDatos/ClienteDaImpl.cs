@@ -29,10 +29,10 @@ namespace AccesoDatos
         {
             switch (tipo)
             {
-                case "Platino":
+                case "Platinum":
                     return new ClientePlatino();
                     break;
-                case "Diamante":
+                case "Diamond":
                     return new ClienteDiamante();
                     break;
                 default:

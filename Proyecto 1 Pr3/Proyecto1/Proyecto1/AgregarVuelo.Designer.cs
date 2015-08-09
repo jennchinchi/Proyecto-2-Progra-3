@@ -54,7 +54,7 @@
             // 
             this.cboPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPlanes.FormattingEnabled = true;
-            this.cboPlanes.Location = new System.Drawing.Point(147, 301);
+            this.cboPlanes.Location = new System.Drawing.Point(167, 301);
             this.cboPlanes.Name = "cboPlanes";
             this.cboPlanes.Size = new System.Drawing.Size(144, 21);
             this.cboPlanes.TabIndex = 99;
@@ -65,33 +65,33 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(76, 300);
+            this.label3.Location = new System.Drawing.Point(90, 301);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 19);
+            this.label3.Size = new System.Drawing.Size(71, 19);
             this.label3.TabIndex = 98;
-            this.label3.Text = "Avion:";
+            this.label3.Text = "FLIGHT:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(17, 218);
+            this.label2.Location = new System.Drawing.Point(30, 218);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 19);
+            this.label2.Size = new System.Drawing.Size(131, 19);
             this.label2.TabIndex = 94;
-            this.label2.Text = "Hora Llegada:";
+            this.label2.Text = "RETURN DATE:";
             // 
             // dtHoraLlegada
             // 
-            this.dtHoraLlegada.Location = new System.Drawing.Point(147, 218);
+            this.dtHoraLlegada.Location = new System.Drawing.Point(167, 218);
             this.dtHoraLlegada.Name = "dtHoraLlegada";
             this.dtHoraLlegada.Size = new System.Drawing.Size(223, 20);
             this.dtHoraLlegada.TabIndex = 92;
             // 
             // dtHoraSalida
             // 
-            this.dtHoraSalida.Location = new System.Drawing.Point(147, 186);
+            this.dtHoraSalida.Location = new System.Drawing.Point(167, 186);
             this.dtHoraSalida.Name = "dtHoraSalida";
             this.dtHoraSalida.Size = new System.Drawing.Size(223, 20);
             this.dtHoraSalida.TabIndex = 91;
@@ -101,11 +101,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(31, 188);
+            this.label1.Location = new System.Drawing.Point(-2, 186);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 19);
+            this.label1.Size = new System.Drawing.Size(163, 19);
             this.label1.TabIndex = 90;
-            this.label1.Text = "Hora Salida:";
+            this.label1.Text = "DEPARTURE DATE:";
             // 
             // btnAgregar
             // 
@@ -122,27 +122,27 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(60, 271);
+            this.label6.Location = new System.Drawing.Point(78, 273);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 19);
+            this.label6.Size = new System.Drawing.Size(84, 19);
             this.label6.TabIndex = 88;
-            this.label6.Text = "Destino:";
+            this.label6.Text = "DESTINY:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(72, 243);
+            this.label5.Location = new System.Drawing.Point(90, 245);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 19);
+            this.label5.Size = new System.Drawing.Size(71, 19);
             this.label5.TabIndex = 87;
-            this.label5.Text = "Salida:";
+            this.label5.Text = "ORIGIN:";
             // 
             // txtPrecio
             // 
             this.txtPrecio.BackColor = System.Drawing.Color.White;
-            this.txtPrecio.Location = new System.Drawing.Point(146, 157);
+            this.txtPrecio.Location = new System.Drawing.Point(166, 157);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(223, 20);
             this.txtPrecio.TabIndex = 122;
@@ -153,17 +153,17 @@
             this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(70, 156);
+            this.label4.Location = new System.Drawing.Point(96, 156);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 19);
+            this.label4.Size = new System.Drawing.Size(65, 19);
             this.label4.TabIndex = 121;
-            this.label4.Text = "Precio:";
+            this.label4.Text = "PRICE:";
             // 
             // cmboDestino
             // 
             this.cmboDestino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboDestino.FormattingEnabled = true;
-            this.cmboDestino.Location = new System.Drawing.Point(148, 271);
+            this.cmboDestino.Location = new System.Drawing.Point(168, 271);
             this.cmboDestino.Name = "cmboDestino";
             this.cmboDestino.Size = new System.Drawing.Size(221, 21);
             this.cmboDestino.TabIndex = 123;
@@ -172,7 +172,7 @@
             // 
             this.cmboSalida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboSalida.FormattingEnabled = true;
-            this.cmboSalida.Location = new System.Drawing.Point(148, 243);
+            this.cmboSalida.Location = new System.Drawing.Point(168, 243);
             this.cmboSalida.Name = "cmboSalida";
             this.cmboSalida.Size = new System.Drawing.Size(221, 21);
             this.cmboSalida.TabIndex = 123;
@@ -197,7 +197,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Name = "AgregarVuelo";
-            this.Text = "Agregar Vuelo";
+            this.Text = "ADD FLIGHT";
             this.Load += new System.EventHandler(this.AgregarVuelo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingAviones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSalida)).EndInit();

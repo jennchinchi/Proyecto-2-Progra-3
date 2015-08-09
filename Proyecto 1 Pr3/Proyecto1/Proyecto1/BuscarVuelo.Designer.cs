@@ -75,11 +75,11 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(473, 302);
+            this.label3.Location = new System.Drawing.Point(460, 304);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 19);
+            this.label3.Size = new System.Drawing.Size(71, 19);
             this.label3.TabIndex = 108;
-            this.label3.Text = "Avion:";
+            this.label3.Text = "FLIGHT:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
@@ -88,11 +88,11 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(414, 220);
+            this.label2.Location = new System.Drawing.Point(405, 221);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 19);
+            this.label2.Size = new System.Drawing.Size(126, 19);
             this.label2.TabIndex = 107;
-            this.label2.Text = "Hora Llegada:";
+            this.label2.Text = "RETURN TIME:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dtHoraLlegada
@@ -117,11 +117,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(428, 190);
+            this.label1.Location = new System.Drawing.Point(373, 189);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 19);
+            this.label1.Size = new System.Drawing.Size(158, 19);
             this.label1.TabIndex = 104;
-            this.label1.Text = "Hora Salida:";
+            this.label1.Text = "DEPARTURE TIME:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label6
@@ -130,11 +130,11 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(457, 273);
+            this.label6.Location = new System.Drawing.Point(447, 273);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 19);
+            this.label6.Size = new System.Drawing.Size(84, 19);
             this.label6.TabIndex = 103;
-            this.label6.Text = "Destino:";
+            this.label6.Text = "DESTINY:";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
@@ -143,11 +143,11 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(469, 245);
+            this.label5.Location = new System.Drawing.Point(459, 245);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 19);
+            this.label5.Size = new System.Drawing.Size(71, 19);
             this.label5.TabIndex = 102;
-            this.label5.Text = "Salida:";
+            this.label5.Text = "ORIGIN:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // btnAgregar
@@ -185,12 +185,12 @@
             // 
             // origen
             // 
-            this.origen.Text = "Origen";
+            this.origen.Text = "ORIGIN";
             this.origen.Width = 117;
             // 
             // destino
             // 
-            this.destino.Text = "Destino";
+            this.destino.Text = "DESTINY";
             this.destino.Width = 198;
             // 
             // txtBId
@@ -230,9 +230,9 @@
             this.label7.ForeColor = System.Drawing.Color.Transparent;
             this.label7.Location = new System.Drawing.Point(98, 142);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 16);
+            this.label7.Size = new System.Drawing.Size(71, 16);
             this.label7.TabIndex = 116;
-            this.label7.Text = "DESTINO:";
+            this.label7.Text = "DESTINY:";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // btnBuscar
@@ -265,9 +265,9 @@
             this.label8.ForeColor = System.Drawing.Color.DimGray;
             this.label8.Location = new System.Drawing.Point(469, 157);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 19);
+            this.label8.Size = new System.Drawing.Size(65, 19);
             this.label8.TabIndex = 119;
-            this.label8.Text = "Precio:";
+            this.label8.Text = "PRICE:";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // cmboSalida
@@ -294,7 +294,7 @@
             this.btnTrayectoria.Name = "btnTrayectoria";
             this.btnTrayectoria.Size = new System.Drawing.Size(75, 23);
             this.btnTrayectoria.TabIndex = 126;
-            this.btnTrayectoria.Text = "Trayectoria";
+            this.btnTrayectoria.Text = "PATH";
             this.btnTrayectoria.UseVisualStyleBackColor = true;
             this.btnTrayectoria.Click += new System.EventHandler(this.btnTrayectoria_Click);
             // 
@@ -325,7 +325,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Name = "BuscarVuelo";
-            this.Text = "BuscarVuelo";
+            this.Text = "SEARCH FLIGHT";
             this.Load += new System.EventHandler(this.BuscarVuelo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingAviones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSalida)).EndInit();

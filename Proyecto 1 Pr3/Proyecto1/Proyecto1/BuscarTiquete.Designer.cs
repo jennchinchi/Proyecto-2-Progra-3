@@ -90,17 +90,17 @@
             // 
             // columnId
             // 
-            this.columnId.Text = "Id";
+            this.columnId.Text = "ID";
             this.columnId.Width = 78;
             // 
             // columnIdCliente
             // 
-            this.columnIdCliente.Text = "IdCliente";
+            this.columnIdCliente.Text = "CLIENT\'S ID";
             this.columnIdCliente.Width = 146;
             // 
             // columnIdVuelo
             // 
-            this.columnIdVuelo.Text = "IdVuelo";
+            this.columnIdVuelo.Text = "FLIGHT\'S ID";
             this.columnIdVuelo.Width = 165;
             // 
             // btnBuscar
@@ -128,9 +128,9 @@
             this.label7.ForeColor = System.Drawing.Color.Transparent;
             this.label7.Location = new System.Drawing.Point(95, 140);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 16);
+            this.label7.Size = new System.Drawing.Size(92, 16);
             this.label7.TabIndex = 140;
-            this.label7.Text = "ID VUELO:";
+            this.label7.Text = "FLIGHT\'S ID:";
             // 
             // txtIdCliente
             // 
@@ -147,18 +147,19 @@
             this.label4.ForeColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(9, 140);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 16);
+            this.label4.Size = new System.Drawing.Size(91, 16);
             this.label4.TabIndex = 138;
-            this.label4.Text = "ID CLIENTE:";
+            this.label4.Text = "CLIENT\'S ID:";
             // 
             // cmbEstado
             // 
             this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(425, 303);
+            this.cmbEstado.Location = new System.Drawing.Point(434, 304);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(121, 21);
             this.cmbEstado.TabIndex = 160;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -166,20 +167,21 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(336, 303);
+            this.label8.Location = new System.Drawing.Point(372, 303);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 19);
+            this.label8.Size = new System.Drawing.Size(66, 19);
             this.label8.TabIndex = 159;
-            this.label8.Text = "ESTADO:";
+            this.label8.Text = "STATE:";
             // 
             // cmbAsiento
             // 
             this.cmbAsiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAsiento.FormattingEnabled = true;
-            this.cmbAsiento.Location = new System.Drawing.Point(425, 267);
+            this.cmbAsiento.Location = new System.Drawing.Point(434, 268);
             this.cmbAsiento.Name = "cmbAsiento";
             this.cmbAsiento.Size = new System.Drawing.Size(121, 21);
             this.cmbAsiento.TabIndex = 158;
+            this.cmbAsiento.SelectedIndexChanged += new System.EventHandler(this.cmbAsiento_SelectedIndexChanged);
             // 
             // lbltCliente
             // 
@@ -187,17 +189,18 @@
             this.lbltCliente.BackColor = System.Drawing.Color.Transparent;
             this.lbltCliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltCliente.ForeColor = System.Drawing.Color.White;
-            this.lbltCliente.Location = new System.Drawing.Point(662, 176);
+            this.lbltCliente.Location = new System.Drawing.Point(671, 177);
             this.lbltCliente.Name = "lbltCliente";
-            this.lbltCliente.Size = new System.Drawing.Size(120, 19);
+            this.lbltCliente.Size = new System.Drawing.Size(129, 19);
             this.lbltCliente.TabIndex = 157;
-            this.lbltCliente.Text = "TIPO CLIENTE";
+            this.lbltCliente.Text = "CLIENT\'S TYPE";
+            this.lbltCliente.Click += new System.EventHandler(this.lbltCliente_Click);
             // 
             // cmbMoneda
             // 
             this.cmbMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMoneda.FormattingEnabled = true;
-            this.cmbMoneda.Location = new System.Drawing.Point(426, 236);
+            this.cmbMoneda.Location = new System.Drawing.Point(435, 237);
             this.cmbMoneda.Name = "cmbMoneda";
             this.cmbMoneda.Size = new System.Drawing.Size(120, 21);
             this.cmbMoneda.TabIndex = 156;
@@ -206,7 +209,7 @@
             // cmbVuelo
             // 
             this.cmbVuelo.FormattingEnabled = true;
-            this.cmbVuelo.Location = new System.Drawing.Point(426, 209);
+            this.cmbVuelo.Location = new System.Drawing.Point(435, 210);
             this.cmbVuelo.Name = "cmbVuelo";
             this.cmbVuelo.Size = new System.Drawing.Size(230, 21);
             this.cmbVuelo.TabIndex = 155;
@@ -218,11 +221,12 @@
             this.lblTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblTotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.White;
-            this.lblTotal.Location = new System.Drawing.Point(709, 310);
+            this.lblTotal.Location = new System.Drawing.Point(718, 311);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(18, 19);
             this.lblTotal.TabIndex = 153;
             this.lblTotal.Text = "0";
+            this.lblTotal.Click += new System.EventHandler(this.lblTotal_Click);
             // 
             // lbldescuento
             // 
@@ -230,11 +234,12 @@
             this.lbldescuento.BackColor = System.Drawing.Color.Transparent;
             this.lbldescuento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldescuento.ForeColor = System.Drawing.Color.White;
-            this.lbldescuento.Location = new System.Drawing.Point(709, 275);
+            this.lbldescuento.Location = new System.Drawing.Point(718, 276);
             this.lbldescuento.Name = "lbldescuento";
             this.lbldescuento.Size = new System.Drawing.Size(18, 19);
             this.lbldescuento.TabIndex = 152;
             this.lbldescuento.Text = "0";
+            this.lbldescuento.Click += new System.EventHandler(this.lbldescuento_Click);
             // 
             // lblPrecio
             // 
@@ -242,11 +247,12 @@
             this.lblPrecio.BackColor = System.Drawing.Color.Transparent;
             this.lblPrecio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecio.ForeColor = System.Drawing.Color.White;
-            this.lblPrecio.Location = new System.Drawing.Point(709, 238);
+            this.lblPrecio.Location = new System.Drawing.Point(718, 239);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(18, 19);
             this.lblPrecio.TabIndex = 151;
             this.lblPrecio.Text = "0";
+            this.lblPrecio.Click += new System.EventHandler(this.lblPrecio_Click);
             // 
             // label1
             // 
@@ -254,11 +260,12 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(568, 310);
+            this.label1.Location = new System.Drawing.Point(598, 311);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 19);
+            this.label1.Size = new System.Drawing.Size(67, 19);
             this.label1.TabIndex = 150;
-            this.label1.Text = "TOTAL A PAGAR:";
+            this.label1.Text = "TOTAL:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label6
             // 
@@ -266,11 +273,12 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(568, 275);
+            this.label6.Location = new System.Drawing.Point(598, 276);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 19);
+            this.label6.Size = new System.Drawing.Size(98, 19);
             this.label6.TabIndex = 149;
-            this.label6.Text = "DESCUENTO:";
+            this.label6.Text = "DISCOUNT:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label2
             // 
@@ -278,11 +286,12 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(568, 238);
+            this.label2.Location = new System.Drawing.Point(598, 239);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 19);
+            this.label2.Size = new System.Drawing.Size(65, 19);
             this.label2.TabIndex = 148;
-            this.label2.Text = "PRECIO:";
+            this.label2.Text = "PRICE:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label5
             // 
@@ -290,11 +299,11 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(336, 267);
+            this.label5.Location = new System.Drawing.Point(384, 270);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 19);
+            this.label5.Size = new System.Drawing.Size(55, 19);
             this.label5.TabIndex = 147;
-            this.label5.Text = "ASIENTO:";
+            this.label5.Text = "SEAT:";
             // 
             // label3
             // 
@@ -302,11 +311,12 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(337, 178);
+            this.label3.Location = new System.Drawing.Point(369, 180);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 19);
+            this.label3.Size = new System.Drawing.Size(72, 19);
             this.label3.TabIndex = 146;
-            this.label3.Text = "CLIENTE:";
+            this.label3.Text = "CLIENT:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label9
             // 
@@ -314,11 +324,12 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(336, 238);
+            this.label9.Location = new System.Drawing.Point(333, 237);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 19);
+            this.label9.Size = new System.Drawing.Size(107, 19);
             this.label9.TabIndex = 145;
-            this.label9.Text = "MONEDA:";
+            this.label9.Text = "CURRENCY:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -326,11 +337,11 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(351, 206);
+            this.label10.Location = new System.Drawing.Point(369, 211);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(71, 19);
             this.label10.TabIndex = 144;
-            this.label10.Text = "VUELO:";
+            this.label10.Text = "FLIGHT:";
             // 
             // label11
             // 
@@ -338,10 +349,11 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(709, 237);
+            this.label11.Location = new System.Drawing.Point(718, 238);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(0, 19);
             this.label11.TabIndex = 148;
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label13
             // 
@@ -349,10 +361,11 @@
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(709, 309);
+            this.label13.Location = new System.Drawing.Point(718, 310);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(0, 19);
             this.label13.TabIndex = 150;
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label17
             // 
@@ -360,10 +373,11 @@
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(727, 176);
+            this.label17.Location = new System.Drawing.Point(736, 177);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(0, 19);
             this.label17.TabIndex = 157;
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // btnModificar
             // 
@@ -378,7 +392,7 @@
             // cmbCliente
             // 
             this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(426, 177);
+            this.cmbCliente.Location = new System.Drawing.Point(435, 178);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(230, 21);
             this.cmbCliente.TabIndex = 162;
@@ -418,7 +432,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.listTiquetes);
             this.Name = "BuscarTiquete";
-            this.Text = "BuscarTiquete";
+            this.Text = "SEARCH TICKET";
             this.Load += new System.EventHandler(this.BuscarTiquete_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingTiquetes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingTiquetes2)).EndInit();

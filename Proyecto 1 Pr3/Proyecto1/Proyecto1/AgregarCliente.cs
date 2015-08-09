@@ -32,8 +32,8 @@ namespace Presentacion
             cmbType.DropDownStyle = ComboBoxStyle.DropDownList;
 
             cmbType.Items.Add("Regular");
-            cmbType.Items.Add("Platino");
-            cmbType.Items.Add("Diamante");
+            cmbType.Items.Add("Platinum");
+            cmbType.Items.Add("Diamond");
             cmbType.SelectedIndex = 0;
             cmbState.SelectedIndex = 0;
         }
@@ -61,7 +61,7 @@ namespace Presentacion
             string resultado = Gestor.agregarCliente(id, nombre, apellido, email, telefono, estado, tipo, millas);
             if (resultado.Equals("True"))
             {
-                MessageBox.Show("USUARIO REGISTRADO SATISFACTORIAMENTE", "UAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("CLIENT ADDED", "UAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
             }
             else
@@ -84,7 +84,7 @@ namespace Presentacion
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Solo se permiten NUMEROS", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("NUMBERS ONLY", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
@@ -94,7 +94,7 @@ namespace Presentacion
         {
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("LETTERS ONLY", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
@@ -107,7 +107,7 @@ namespace Presentacion
         {
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Solo se permiten LETRAS", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("LETTERS ONLY", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }

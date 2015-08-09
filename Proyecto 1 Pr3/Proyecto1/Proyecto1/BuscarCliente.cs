@@ -40,8 +40,8 @@ namespace Presentacion
         {
             InitializeComponent();
             cmbTipo.Items.Add("Regular");
-            cmbTipo.Items.Add("Platino");
-            cmbTipo.Items.Add("Diamante");
+            cmbTipo.Items.Add("Platinum");
+            cmbTipo.Items.Add("Diamond");
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -95,7 +95,7 @@ namespace Presentacion
             string resultado = Gestor.modificarCliente(selectedC);
             if (resultado.Equals("True"))
             {
-                MessageBox.Show("CLIENTE ACTUALIZADO SATISFACTORIAMENTE", "UAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("CLIENT UPDATED", "UAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnBuscar_Click(null, null);
             }
             else
