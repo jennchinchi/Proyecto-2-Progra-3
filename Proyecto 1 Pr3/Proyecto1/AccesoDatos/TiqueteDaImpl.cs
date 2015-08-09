@@ -4,6 +4,12 @@
 //----Fecha creación: 14-06-2015 / 01-07-2015
 //----Descripción: Creación estructura módulo tiquete
 //----Encargado: -Jenniffer Chinchilla Porras
+//
+//----Fecha: 07-08-2015
+//----Descripción: Cambio en metodo listar clientes para hacer la 
+//----consulta con linq
+//----Encargado: -Jenniffer Chinchilla Porras
+//----Llave cambio = *camblinqticket
 /*------------------------------------------------------------
 ---------------- HISTORIAL DE MODIFICACION -----------------
 ------------------------------------------------------------*/
@@ -88,7 +94,7 @@ namespace AccesoDatos
             }
             return resultado;
         }
-
+        //*camblinqticket
         public List<Tiquete> listarTiquetes()
         {
             List<Tiquete> listaTiquete = new List<Tiquete>();
