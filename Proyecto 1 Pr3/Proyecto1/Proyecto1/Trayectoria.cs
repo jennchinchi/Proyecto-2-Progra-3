@@ -4,6 +4,7 @@
 //----Fecha creación: 06-07-2015 
 //----Descripción: Creación de pantalla para trayectoria con googlemaps
 //----Encargado: Jenniffer Chinchilla Porras
+//----Llave cambio = *trayectoria
 /*--------------------------------------------------------------
 ---------------FIN HISTORIAL DE MODIFICACION ---------------
 ------------------------------------------------------------*/
@@ -28,14 +29,14 @@ namespace Presentacion
         {
             InitializeComponent();
         }
-
+        //*trayectoria
         private void Trayectoria_Load(object sender, EventArgs e)
         {
             StringBuilder queryAddress = new StringBuilder();
             queryAddress.Append("https://www.google.co.cr/maps/dir/" + latitud_o + "," + longitud_o + "/" + latitud_d + "," + longitud_d);
             webBrowser.Navigate(queryAddress.ToString());
         }
-
+        //*trayectoria
         public void cambiarCoordenadas(string lat_o, string long_o, string lat_d, string long_d)
         {
             latitud_o = lat_o;

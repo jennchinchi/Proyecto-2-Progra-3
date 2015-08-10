@@ -9,6 +9,7 @@
 //----Descripción: Modificacion de diseño para implementacion con 
 //---- capa de datos 
 //----Encargado: Roberto Mora Castro
+//----Llave cambio = *capadatos
 /*--------------------------------------------------------------
 ---------------FIN HISTORIAL DE MODIFICACION ---------------
 ------------------------------------------------------------*/
@@ -24,8 +25,10 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
+    //*capadatos
     public partial class AgregarCliente : Form
     {
+        //*capadatos
         public AgregarCliente()
         {
             InitializeComponent();
@@ -37,7 +40,7 @@ namespace Presentacion
             cmbType.SelectedIndex = 0;
             cmbState.SelectedIndex = 0;
         }
-
+        //*capadatos
         private void button1_Click(object sender, EventArgs e)
         {
             string id = txtID.Text,
@@ -79,7 +82,7 @@ namespace Presentacion
         {
 
         }
-
+        //*capadatos
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
@@ -90,6 +93,7 @@ namespace Presentacion
             }
 
         }
+        //*capadatos
         private void txtName_KeyPress(object sender, KeyPressEventArgs e) //validacion solo letras
         {
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
@@ -101,8 +105,7 @@ namespace Presentacion
 
 
         }
-
-
+        //*capadatos
         private void txtLastName_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))

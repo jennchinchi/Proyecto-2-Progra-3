@@ -4,11 +4,13 @@
 //----Fecha creación: 14-06-2015 / 01-07-2015
 //----Descripción: Creación estructura módulo avion
 //----Encargado: -Dennis Hurtado Prada
+//---- Llave cambio = *creaavion
 
 //----Fecha creación: 28-06-2014
 //----Descripción: Inclusion de nuevo método, listarAviones para 
 //----combobox en vuelo
 //----Encargado: -Jenniffer Chinchilla Porras
+//----Llave cambio = *listarAviones
 /*------------------------------------------------------------
 ---------------- HISTORIAL DE MODIFICACION -----------------
 ------------------------------------------------------------*/
@@ -26,6 +28,7 @@ namespace AccesoDatos
 {
     public class AvionDaImpl : IAvionDa
     {
+        //*creaavion
         public Avion buscarAvionPorId(int id)
         {
             Avion av = null;
@@ -59,6 +62,7 @@ namespace AccesoDatos
             }
             return av;
         }
+        //*listarAviones
         public List<Avion> listarAviones()
         {
             List<Avion> listaavion = new List<Avion>();

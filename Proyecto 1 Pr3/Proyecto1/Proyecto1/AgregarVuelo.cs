@@ -9,6 +9,7 @@
 //----Descripción: Modificacion de diseño para implementacion con 
 //---- capa de datos 
 //----Encargado: Jenniffer Chinchilla Porras
+//----Llave cambio = *capadatos
 /*--------------------------------------------------------------
 ---------------FIN HISTORIAL DE MODIFICACION ---------------
 ------------------------------------------------------------*/
@@ -30,7 +31,7 @@ namespace Presentacion
         {
             InitializeComponent();
         }
-
+        //*capadatos
         private void AgregarVuelo_Load(object sender, EventArgs e)
         {
             bindingAviones.DataSource = Gestor.listarAviones();
@@ -50,7 +51,7 @@ namespace Presentacion
             cmboDestino.DisplayMember = "nombre";
             cmboDestino.ValueMember = "idLugar";
         }
-
+        //*capadatos
         private void AgregarVuelo_Click(object sender, EventArgs e)
         {
             int idAvion = (int)cboPlanes.SelectedValue;

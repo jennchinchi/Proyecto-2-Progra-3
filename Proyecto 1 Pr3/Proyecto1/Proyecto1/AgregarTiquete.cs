@@ -9,6 +9,7 @@
 //----Descripción: Modificacion de diseño para implementacion con 
 //---- capa de datos 
 //----Encargado: Jenniffer Chinchilla Porras
+//----Llave cambio = *capadatos
 /*--------------------------------------------------------------
 ---------------FIN HISTORIAL DE MODIFICACION ---------------
 ------------------------------------------------------------*/
@@ -29,6 +30,7 @@ namespace Presentacion
     {
         Cliente selectedC;
         Vuelo selectedV;
+        //*capadatos
         public AgregarTiquete()
         {
             InitializeComponent();
@@ -36,6 +38,7 @@ namespace Presentacion
             cmbEstado.Items.Add("Inactive");
             cmbEstado.SelectedIndex = 0;
         }
+        //*capadatos
         private void AgregarTiquete_Load(object sender, EventArgs e)
         {
             Dictionary<int,string> comboSource = new Dictionary<int,string>();
@@ -55,14 +58,14 @@ namespace Presentacion
             cmbVuelo.ValueMember = "idVuelo";
 
         }
-
+        //*capadatos
         private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedC = (Cliente)cmbCliente.SelectedItem;
             lblTotal.Text = "";
             actualizarDetalle();
         }
-
+        //*capadatos
         private void cmbVuelo_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedV = (Vuelo)cmbVuelo.SelectedItem;
@@ -80,7 +83,7 @@ namespace Presentacion
             cmbAsiento.DataSource = bindingAsientos.DataSource;
             actualizarDetalle();
         }
-
+        //*capadatos
         private void actualizarDetalle()
         {
             if (selectedC != null)
@@ -104,7 +107,7 @@ namespace Presentacion
         {
             actualizarDetalle();
         }
-
+        //*capadatos
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             String

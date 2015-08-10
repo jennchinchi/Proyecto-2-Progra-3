@@ -9,6 +9,7 @@
 //----Descripción: Modificacion de diseño para implementacion con 
 //---- capa de datos 
 //----Encargado: Jenniffer Chinchilla Porras
+//----Llave cambio = *capadatos
 /*--------------------------------------------------------------
 ---------------FIN HISTORIAL DE MODIFICACION ---------------
 ------------------------------------------------------------*/
@@ -31,6 +32,7 @@ namespace Presentacion
         Tiquete selectedT;
         Cliente selectedC;
         Vuelo selectedV;
+        //*capadatos
         public BuscarTiquete()
         {
             InitializeComponent();
@@ -38,7 +40,7 @@ namespace Presentacion
             cmbEstado.Items.Add("Inactive");
             cmbEstado.SelectedIndex = 0;
         }
-
+        //*capadatos
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string idCliente = txtIdCliente.Text;
@@ -53,7 +55,7 @@ namespace Presentacion
                 listTiquetes.Items.Add(li);
             }
         }
-
+        //*capadatos
         private void BuscarTiquete_Load(object sender, EventArgs e)
         {
             Dictionary<int, string> comboSource = new Dictionary<int, string>();
@@ -72,7 +74,7 @@ namespace Presentacion
             cmbVuelo.DisplayMember = "cmbDisplay";
             cmbVuelo.ValueMember = "idVuelo";
         }
-
+        //*capadatos
         private void listTiquetes_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedItems = listTiquetes.SelectedItems;
@@ -86,14 +88,14 @@ namespace Presentacion
                 cmbVuelo_SelectedIndexChanged(null, null);
             }
         }
-
+        //*capadatos
         private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedC = (Cliente)cmbCliente.SelectedItem;
             lblTotal.Text = "";
             actualizarDetalle();
         }
-
+        //*capadatos
         private void cmbVuelo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (selectedT != null)
@@ -115,7 +117,7 @@ namespace Presentacion
                 actualizarDetalle();
             }
         }
-
+        //*capadatos
         private void actualizarDetalle()
         {
             if (selectedC != null)
@@ -139,7 +141,7 @@ namespace Presentacion
         {
             actualizarDetalle();
         }
-
+        //*capadatos
         private void btnModificar_Click(object sender, EventArgs e)
         {
             selectedT.Estado = cmbEstado.Text;

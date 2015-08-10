@@ -4,11 +4,13 @@
 //----Fecha creación: 14-06-2015 / 01-07-2015
 //----Descripción: Creación estructura módulo cliente
 //----Encargado: Roberto Mora Castro
+//----Llave cambio = *creacliente
 
 //----Fecha creación: 27-06-2014
 //----Descripción: Inclusion de nuevos métodos, listarClientesPorIDoNombre
 //----para busquedas en el listview
 //----Encargado: -Jenniffer Chinchilla Porras
+//----Llave cambio = *listview
 /*------------------------------------------------------------
 ---------------- HISTORIAL DE MODIFICACION -----------------
 ------------------------------------------------------------*/
@@ -25,6 +27,7 @@ namespace AccesoDatos
 {
     public class ClienteDaImpl : IClienteDa
     {
+        //*creacliente
         public Cliente definirTipoCliente(string tipo)
         {
             switch (tipo)
@@ -40,6 +43,7 @@ namespace AccesoDatos
                     break;
             }
         }
+        //*creacliente
         public string guardarCliente(Cliente cliente)
         {
             MyConnection myConnection = new MyConnection();
@@ -74,6 +78,7 @@ namespace AccesoDatos
             }
             return resultado;
         }
+        //*creacliente
         public string modificarCliente(Cliente cliente)
         {
             MyConnection myConnection = new MyConnection();
@@ -187,7 +192,7 @@ namespace AccesoDatos
             }
             return cliente;
         }
-
+        //*listview
         public List<Cliente> listarClientesPorIdONombre(string id, string nombre)
         {
             List<Cliente> listaCliente = new List<Cliente>();

@@ -2,12 +2,14 @@
 ---------------- HISTORIAL DE MODIFICACION -----------------
 ------------------------------------------------------------*/
 //----Fecha creación: 14-06-2015 / 01-07-2015
-//----Descripción: Creación estructura módulo tiquete
+//----Descripción: Creación estructura módulo tiquete con los metodos
+//---- guardar, modificar 
 //----Encargado: -Jenniffer Chinchilla Porras
+//---- Llave cambio = *creaticket
 //
 //----Fecha: 07-08-2015
-//----Descripción: Cambio en metodo listar clientes para hacer la 
-//----consulta con linq
+//----Descripción: Cambio en metodos listar clientes,buscar por id,buscar por 
+//----cliente y vuelo para hacer la consulta con linq
 //----Encargado: -Jenniffer Chinchilla Porras
 //----Llave cambio = *camblinqticket
 /*------------------------------------------------------------
@@ -29,6 +31,7 @@ namespace AccesoDatos
 {
     public class TiqueteDaImpl : ITiqueteDa
     {
+        //*creaticket
         public string guardarTiquete(Tiquete tiquete)
         {
             MyConnection myConnection = new MyConnection();
@@ -61,6 +64,7 @@ namespace AccesoDatos
             }
             return resultado;
         }
+        //*creaticket
         public string modificarTiquete(Tiquete tiquete)
         {
             MyConnection myConnection = new MyConnection();
@@ -142,77 +146,100 @@ namespace AccesoDatos
             return listaTiquete;
         }
 
+        //*camblinqticket
         public Tiquete buscarporId(int idTiquete) 
         {
             Tiquete tiquete = new Tiquete();
             MyConnection myConnection = new MyConnection();
-            SqlConnection conexion = myConnection.CreateConnection();
-            SqlCommand comando = myConnection.CreateCommand(conexion);
-            SqlDataReader ti;
+            DataContext datacontext = new DataContext(myConnection.SQLConnection);
+            var table = datacontext.GetTable<Tiquete>();
+            //MyConnection myConnection = new MyConnection();
+            //SqlConnection conexion = myConnection.CreateConnection();
+            //SqlCommand comando = myConnection.CreateCommand(conexion);
+            //SqlDataReader ti;
 
-            comando.CommandText = "sp_searchByIdTicket";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@pId ", idTiquete);
+            //comando.CommandText = "sp_searchByIdTicket";
+            //comando.CommandType = CommandType.StoredProcedure;
+            //comando.Parameters.AddWithValue("@pId ", idTiquete);
             try
             {
-                conexion.Open();
-                ti = comando.ExecuteReader();
-                while (ti.Read())
+                var listTickets = from lt in table
+                                  where lt.IdTiquete == idTiquete
+                                  select lt;
+
+                foreach (Tiquete b in listTickets)
                 {
-                    tiquete.IdTiquete = (int)ti["idTiquete"];
-                    tiquete.Moneda = (int)ti["moneda"];
-                    tiquete.Estado = (string)ti["estado"];
-                    tiquete.IdCliente = (string)ti["cliente"];
-                    tiquete.IdVuelo = (int)ti["vuelo"];
-                    tiquete.Asiento = (int)ti["asiento"];
+                    tiquete = b;
                 }
+                //conexion.Open();
+                //ti = comando.ExecuteReader();
+                //while (ti.Read())
+                //{
+                //    tiquete.IdTiquete = (int)ti["idTiquete"];
+                //    tiquete.Moneda = (int)ti["moneda"];
+                //    tiquete.Estado = (string)ti["estado"];
+                //    tiquete.IdCliente = (string)ti["cliente"];
+                //    tiquete.IdVuelo = (int)ti["vuelo"];
+                //    tiquete.Asiento = (int)ti["asiento"];
+                //}
             }
             catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            finally
-            {
-                conexion.Close();
-            }
+            //finally
+            //{
+            //    //conexion.Close();
+            //}
             return tiquete;
         }
+        //*camblinqticket
         public List<Tiquete> buscarporClienteVuelo(string idCliente,int idVuelo)
         {
             List<Tiquete> listaTiquete = new List<Tiquete>();
-            Tiquete tiquete = new Tiquete();
             MyConnection myConnection = new MyConnection();
-            SqlConnection conexion = myConnection.CreateConnection();
-            SqlCommand comando = myConnection.CreateCommand(conexion);
-            SqlDataReader ti;
+            DataContext datacontext = new DataContext(myConnection.SQLConnection);
+            var table = datacontext.GetTable<Tiquete>();
+            //Tiquete tiquete = new Tiquete();
+            //MyConnection myConnection = new MyConnection();
+            //SqlConnection conexion = myConnection.CreateConnection();
+            //SqlCommand comando = myConnection.CreateCommand(conexion);
+            //SqlDataReader ti;
 
-            comando.CommandText = "sp_searchByClienteByVuelo";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@pIdCliente", idCliente);
-            comando.Parameters.AddWithValue("@pIdFlight", idVuelo);
+            //comando.CommandText = "sp_searchByClienteByVuelo";
+            //comando.CommandType = CommandType.StoredProcedure;
+            //comando.Parameters.AddWithValue("@pIdCliente", idCliente);
+            //comando.Parameters.AddWithValue("@pIdFlight", idVuelo);
             try
             {
-                conexion.Open();
-                ti = comando.ExecuteReader();
-                while (ti.Read())
+                var listTickets = from lt in table
+                                  where lt.IdCliente == idCliente || lt.IdVuelo == idVuelo
+                                  select lt;
+                foreach (Tiquete creatiquete in listTickets)
                 {
-                    tiquete.IdTiquete = (int)ti["idTiquete"];
-                    tiquete.Moneda = (int)ti["moneda"];
-                    tiquete.Estado = (string)ti["estado"];
-                    tiquete.IdCliente = (string)ti["cliente"];
-                    tiquete.IdVuelo = (int)ti["vuelo"];
-                    tiquete.Asiento = (int)ti["asiento"];
-                    listaTiquete.Add(tiquete);
+                    listaTiquete.Add(creatiquete);
                 }
+                //conexion.Open();
+                //ti = comando.ExecuteReader();
+                //while (ti.Read())
+                //{
+                //    tiquete.IdTiquete = (int)ti["idTiquete"];
+                //    tiquete.Moneda = (int)ti["moneda"];
+                //    tiquete.Estado = (string)ti["estado"];
+                //    tiquete.IdCliente = (string)ti["cliente"];
+                //    tiquete.IdVuelo = (int)ti["vuelo"];
+                //    tiquete.Asiento = (int)ti["asiento"];
+                //    listaTiquete.Add(tiquete);
+                //}
             }
             catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            finally
-            {
-                conexion.Close();
-            }
+            //finally
+            //{
+            //    conexion.Close();
+            //}
             return listaTiquete;
         }
 

@@ -9,12 +9,14 @@
 //----Descripción: Modificacion de diseño para implementacion con 
 //---- capa de datos 
 //----Encargado: Roberto Mora Castro
+//---- Llave cambio = *capadatos
 
 //----Fecha creación: 28-06-2015 / 05-07-2015
 //----Descripción: Modificacion de diseño para implementacion del
 //----ListView para observar lista de clientes activos/inactivos
 //----ya sea por nombre, por id o todos 
 //----Encargado: Jenniffer Chinchilla Porras
+//----Llave cambios = *listview
 /*--------------------------------------------------------------
 ---------------FIN HISTORIAL DE MODIFICACION ---------------
 ------------------------------------------------------------*/
@@ -36,6 +38,7 @@ namespace Presentacion
 
         List<Cliente> lc;
         Cliente selectedC;
+        //*capadatos
         public BuscarCliente()
         {
             InitializeComponent();
@@ -43,7 +46,7 @@ namespace Presentacion
             cmbTipo.Items.Add("Platinum");
             cmbTipo.Items.Add("Diamond");
         }
-
+        //*listview
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string id = txtBId.Text;
@@ -63,7 +66,7 @@ namespace Presentacion
         private void BuscarCliente_Load(object sender, EventArgs e)
         {
         }
-
+        //*capadatos
         private void listClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedItems = listClientes.SelectedItems;
@@ -80,7 +83,7 @@ namespace Presentacion
                 txtMillas.Text = selectedC.Millas.ToString();
             }
         }
-
+        //*capadatos
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 

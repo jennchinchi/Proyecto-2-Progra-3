@@ -4,6 +4,7 @@
 //----Fecha creación: 14-06-2015 / 01-07-2015
 //----Descripción: Creación estructura módulo vuelo
 //----Encargado: -Jenniffer Chinchilla Porras
+//----Llave cambio = *creavuelo
 /*------------------------------------------------------------
 ---------------- HISTORIAL DE MODIFICACION -----------------
 ------------------------------------------------------------*/
@@ -20,6 +21,7 @@ namespace AccesoDatos
 {
     public class VueloDaImpl : IVueloDa
     {
+        //*creavuelo
         public string guardarVuelo(Vuelo vuelo)
         {
             MyConnection myConnection = new MyConnection();
@@ -52,6 +54,7 @@ namespace AccesoDatos
             }
             return resultado;
         }
+        //*creavuelo
         public string modificarVuelo(Vuelo vuelo)
         {
             MyConnection myConnection = new MyConnection();
@@ -86,7 +89,7 @@ namespace AccesoDatos
             }
             return resultado;
         }
-
+        //*creavuelo
         public List<Vuelo> listarVuelos()
         {
             List<Vuelo> listaVuelos = new List<Vuelo>();
@@ -127,7 +130,7 @@ namespace AccesoDatos
             }
             return listaVuelos;
         }
-
+        //*creavuelo
         public Vuelo buscarporId(int idVuelo)
         {
             Vuelo vuelo = new Vuelo();
@@ -164,7 +167,7 @@ namespace AccesoDatos
             }
             return vuelo;
         }
-
+        //*creavuelo
         public List<Vuelo> buscarVuelosPorIdoDestino(int id, string destino)
         {
             List<Vuelo> listaVuelos = new List<Vuelo>();
@@ -205,7 +208,7 @@ namespace AccesoDatos
             }
             return listaVuelos;
         }
-
+        //*creavuelo
         public List<int> listaAsientosReservados(int idVuelo)
         {
             List<int> asientos = new List<int>();

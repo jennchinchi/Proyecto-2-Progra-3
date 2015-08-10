@@ -9,6 +9,7 @@
 //----Descripción: Modificacion de diseño para implementacion con 
 //---- capa de datos 
 //----Encargado: Jenniffer Chinchilla Porras
+//----Llave cambio =*capadatos
 /*--------------------------------------------------------------
 ---------------FIN HISTORIAL DE MODIFICACION ---------------
 ------------------------------------------------------------*/
@@ -36,7 +37,7 @@ namespace Presentacion
         {
             InitializeComponent();
         }
-
+        //*capadatos
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string id = txtBId.Text;
@@ -51,7 +52,7 @@ namespace Presentacion
                 listVuelos.Items.Add(li);
             }
         }
-
+        //*capadatos
         private void listVuelos_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedItems = listVuelos.SelectedItems;
@@ -66,7 +67,7 @@ namespace Presentacion
                 cboPlanes.SelectedValue = selectedV.IdAvion;
             }
         }
-
+        //*capadatos
         private void BuscarVuelo_Load(object sender, EventArgs e)
         {
             bindingAviones.DataSource = Gestor.listarAviones();
@@ -97,6 +98,7 @@ namespace Presentacion
         }
 
         // Boton modificar
+        //*capadatos
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             selectedV.Origen = cmboSalida.SelectedValue.ToString();
