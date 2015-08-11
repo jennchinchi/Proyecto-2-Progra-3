@@ -17,11 +17,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using LogicaNegocios;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.Linq;
+using System.IO;
 
 namespace AccesoDatos
 {
@@ -118,78 +118,98 @@ namespace AccesoDatos
         {
             List<Cliente> listaCliente = new List<Cliente>();
             MyConnection myConnection = new MyConnection();
-            SqlConnection conexion = myConnection.CreateConnection();
-            SqlCommand comando = myConnection.CreateCommand(conexion);
-            SqlDataReader cl;
+            //LINQtoSQL_Client
+            DataContext datacontext = new DataContext(myConnection.SQLConnection);
+            var table = datacontext.GetTable<Cliente>();
+            //SqlConnection conexion = myConnection.CreateConnection();
+            //SqlCommand comando = myConnection.CreateCommand(conexion);
+            //SqlDataReader cl;
 
-            comando.CommandText = "sp_listClients";
-            comando.CommandType = CommandType.StoredProcedure;
+            //comando.CommandText = "sp_listClients";
+            //comando.CommandType = CommandType.StoredProcedure;
             try
             {
-                conexion.Open();
-                cl = comando.ExecuteReader();
-                while (cl.Read())
+                var listClients = from lc in table
+                                  select lc;
+                foreach (Cliente creacliente in listClients)
                 {
-                    Cliente creaCliente = definirTipoCliente((string)cl["tipoCliente"]);
-                    creaCliente.Id = (string)cl["identificacion"];
-                    creaCliente.Nombre = (string)cl["nombre"];
-                    creaCliente.Apellido = (string)cl["apellido"];
-                    creaCliente.Email = (string)cl["email"];
-                    creaCliente.Telefono = (string)cl["telefono"];
-                    creaCliente.Estado = (string)cl["estado"];
-                    creaCliente.TipoCliente = (string)cl["tipoCliente"];
-                    creaCliente.Millas = int.Parse(cl["millas"].ToString());
-
-                    listaCliente.Add(creaCliente);
-
+                    listaCliente.Add(creacliente);
                 }
+                //conexion.Open();
+                //cl = comando.ExecuteReader();
+                //while (cl.Read())
+                //{
+                //    Cliente creaCliente = definirTipoCliente((string)cl["tipoCliente"]);
+                //    creaCliente.Id = (string)cl["identificacion"];
+                //    creaCliente.Nombre = (string)cl["nombre"];
+                //    creaCliente.Apellido = (string)cl["apellido"];
+                //    creaCliente.Email = (string)cl["email"];
+                //    creaCliente.Telefono = (string)cl["telefono"];
+                //    creaCliente.Estado = (string)cl["estado"];
+                //    creaCliente.TipoCliente = (string)cl["tipoCliente"];
+                //    creaCliente.Millas = int.Parse(cl["millas"].ToString());
+
+                //    listaCliente.Add(creaCliente);
+
+            //}
             }
             catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            finally
-            {
-                conexion.Close();
-            }
+            //finally
+            //{
+            //    conexion.Close();
+            //}
             return listaCliente;
         }
         public Cliente buscarporId(int idCliente)
         {
             Cliente cliente = null;
             MyConnection myConnection = new MyConnection();
-            SqlConnection conexion = myConnection.CreateConnection();
-            SqlCommand comando = myConnection.CreateCommand(conexion);
-            SqlDataReader cl;
+            DataContext datacontext = new DataContext(myConnection.SQLConnection);
+            var table = datacontext.GetTable<Cliente>();
 
-            comando.CommandText = "sp_searchById";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@pId ", idCliente);
+            //SqlConnection conexion = myConnection.CreateConnection();
+            //SqlCommand comando = myConnection.CreateCommand(conexion);
+            //SqlDataReader cl;
+
+            //comando.CommandText = "sp_searchById";
+            //comando.CommandType = CommandType.StoredProcedure;
+            //comando.Parameters.AddWithValue("@pId ", idCliente);
             try
             {
-                conexion.Open();
-                cl = comando.ExecuteReader();
-                while (cl.Read())
+                var listClientes = from lc in table
+                                  where lc.Id == idCliente.ToString() 
+                                  select lc;
+
+                foreach (Cliente b in listClientes)
                 {
-                    cliente = definirTipoCliente((string)cl["tipoCliente"]);
-                    cliente.Id = (string)cl["identificacion"];
-                    cliente.Nombre = (string)cl["nombre"];
-                    cliente.Apellido = (string)cl["apellido"];
-                    cliente.Email = (string)cl["email"];
-                    cliente.Telefono = (string)cl["telefono"];
-                    cliente.Estado = (string)cl["estado"];
-                    cliente.TipoCliente = (string)cl["tipoCliente"];
-                    cliente.Millas = int.Parse(cl["millas"].ToString());
+                    cliente = b;
                 }
+                //conexion.Open();
+                //cl = comando.ExecuteReader();
+                //while (cl.Read())
+                //{
+                //    cliente = definirTipoCliente((string)cl["tipoCliente"]);
+                //    cliente.Id = (string)cl["identificacion"];
+                //    cliente.Nombre = (string)cl["nombre"];
+                //    cliente.Apellido = (string)cl["apellido"];
+                //    cliente.Email = (string)cl["email"];
+                //    cliente.Telefono = (string)cl["telefono"];
+                //    cliente.Estado = (string)cl["estado"];
+                //    cliente.TipoCliente = (string)cl["tipoCliente"];
+                //    cliente.Millas = int.Parse(cl["millas"].ToString());
+            //}
             }
             catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            finally
-            {
-                conexion.Close();
-            }
+            //finally
+            //{
+            //    conexion.Close();
+            //}
             return cliente;
         }
         //*listview
@@ -197,42 +217,51 @@ namespace AccesoDatos
         {
             List<Cliente> listaCliente = new List<Cliente>();
             MyConnection myConnection = new MyConnection();
-            SqlConnection conexion = myConnection.CreateConnection();
-            SqlCommand comando = myConnection.CreateCommand(conexion);
-            SqlDataReader cl;
+            DataContext datacontext = new DataContext(myConnection.SQLConnection);
+            var table = datacontext.GetTable<Cliente>();
+            //SqlConnection conexion = myConnection.CreateConnection();
+            //SqlCommand comando = myConnection.CreateCommand(conexion);
+            //SqlDataReader cl;
 
-            comando.CommandText = "sp_searchClienteByIdORNombre";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@pId", id);
-            comando.Parameters.AddWithValue("@pNombre", nombre);
+            //comando.CommandText = "sp_searchClienteByIdORNombre";
+            //comando.CommandType = CommandType.StoredProcedure;
+            //comando.Parameters.AddWithValue("@pId", id);
+            //comando.Parameters.AddWithValue("@pNombre", nombre);
             try
             {
-                conexion.Open();
-                cl = comando.ExecuteReader();
-                while (cl.Read())
+                var listLIST = from lt in table
+                                  where lt.Id == id.ToString() || lt.Nombre == nombre
+                                  select lt;
+                foreach (Cliente creaCliente in listLIST)
                 {
-                    Cliente creaCliente = definirTipoCliente((string)cl["tipoCliente"]);
-                    creaCliente.Id = (string)cl["identificacion"];
-                    creaCliente.Nombre = (string)cl["nombre"];
-                    creaCliente.Apellido = (string)cl["apellido"];
-                    creaCliente.Email = (string)cl["email"];
-                    creaCliente.Telefono = (string)cl["telefono"];
-                    creaCliente.Estado = (string)cl["estado"];
-                    creaCliente.TipoCliente = (string)cl["tipoCliente"];
-                    creaCliente.Millas = int.Parse(cl["millas"].ToString());
-
                     listaCliente.Add(creaCliente);
-
                 }
+                //conexion.Open();
+                //cl = comando.ExecuteReader();
+                //while (cl.Read())
+                //{
+                //    Cliente creaCliente = definirTipoCliente((string)cl["tipoCliente"]);
+                //    creaCliente.Id = (string)cl["identificacion"];
+                //    creaCliente.Nombre = (string)cl["nombre"];
+                //    creaCliente.Apellido = (string)cl["apellido"];
+                //    creaCliente.Email = (string)cl["email"];
+                //    creaCliente.Telefono = (string)cl["telefono"];
+                //    creaCliente.Estado = (string)cl["estado"];
+                //    creaCliente.TipoCliente = (string)cl["tipoCliente"];
+                //    creaCliente.Millas = int.Parse(cl["millas"].ToString());
+
+                //    listaCliente.Add(creaCliente);
+
+                //}
             }
             catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            finally
-            {
-                conexion.Close();
-            }
+            //finally
+            //{
+            //    conexion.Close();
+            //}
             return listaCliente;
         }
     }
