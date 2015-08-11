@@ -24,8 +24,8 @@ using System.Data.SqlClient;
 namespace AccesoDatos
 {
     public class MyConnection
-    {    private string sqlConnection = "Data Source=DESKTOP-ROBERTO;Initial Catalog=Flights;User ID=sa;Password=123456";
-        //private string sqlConnection = "Data Source=NANI\\SQLEXPRESS;Initial Catalog=Flights; User ID=user;Password=123456";
+    {//    private string sqlConnection = "Data Source=DESKTOP-ROBERTO;Initial Catalog=Flights;User ID=sa;Password=123456";
+        private string sqlConnection = "Data Source=NANI\\SQLEXPRESS;Initial Catalog=Flights; User ID=user;Password=123456";
         //*conexion
         public string SQLConnection
         {

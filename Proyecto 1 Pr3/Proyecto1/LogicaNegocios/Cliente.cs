@@ -23,6 +23,9 @@ namespace LogicaNegocios
 
 {
     [Table(Name = "Client")]
+    [InheritanceMapping(Code = "Regular", Type = typeof(ClienteRegular), IsDefault = true)]
+    [InheritanceMapping(Code = "Platinum", Type = typeof(ClientePlatino))]
+    [InheritanceMapping(Code = "Diamond", Type = typeof(ClienteDiamante))]
     public abstract class Cliente
     {
         #region Variables
@@ -42,11 +45,11 @@ namespace LogicaNegocios
 
         #region PropiedadesMapeadas
         //LINQtoSQL_Client
-        [Column(Name = "id", IsPrimaryKey = false)]
+        [Column(IsPrimaryKey = true, Name = "id")]
         public string Id
         {
-            get { return id; }
-            set { id = value; }
+            get { return this.id; }
+            set { this.id = value; }
         }
 
         //LINQtoSQL_Client
@@ -90,7 +93,7 @@ namespace LogicaNegocios
         }
 
         //LINQtoSQL_Client
-        [Column(Name = "clientType")]
+        [Column(Name = "clientType", IsDiscriminator = true)]
         public string TipoCliente
         {
             get { return tipoCliente; }
