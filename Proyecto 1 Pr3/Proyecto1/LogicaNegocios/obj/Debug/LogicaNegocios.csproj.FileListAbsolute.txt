@@ -13,3 +13,8 @@ C:\Users\rober\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\Log
 C:\Users\rober\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\LogicaNegocios\obj\Debug\LogicaNegocios.csprojResolveAssemblyReference.cache
 C:\Users\rober\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\LogicaNegocios\obj\Debug\LogicaNegocios.dll
 C:\Users\rober\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\LogicaNegocios\obj\Debug\LogicaNegocios.pdb
+C:\Users\Dennis\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\LogicaNegocios\bin\Debug\LogicaNegocios.dll
+C:\Users\Dennis\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\LogicaNegocios\bin\Debug\LogicaNegocios.pdb
+C:\Users\Dennis\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\LogicaNegocios\obj\Debug\LogicaNegocios.csprojResolveAssemblyReference.cache
+C:\Users\Dennis\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\LogicaNegocios\obj\Debug\LogicaNegocios.dll
+C:\Users\Dennis\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\LogicaNegocios\obj\Debug\LogicaNegocios.pdb
