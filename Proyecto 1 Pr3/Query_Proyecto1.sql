@@ -34,6 +34,10 @@ CREATE TABLE Client
 		miles int 
 );
  GO
+	 ALTER TABLE Client
+	 ADD CONSTRAINT pk_ClientID PRIMARY KEY (id)
+	 
+GO
  CREATE TABLE Ticket
 (
 		idTicket int IDENTITY(1,1) PRIMARY KEY,
@@ -261,7 +265,7 @@ BEGIN
 	SELECT idPlane AS idAvion, marca AS marca, qtyAsiento AS cantidadAsientos
 	FROM Plane;
 END
-
+GO
 CREATE PROCEDURE sp_listPlace
 AS
 BEGIN
@@ -291,6 +295,7 @@ BEGIN
 	SELECT idPlane AS idAvion, marca AS marca, qtyAsiento AS cantidadAsientos
 	FROM Plane WHERE idPlane = @pId;
 END
+
 GO
 CREATE PROCEDURE sp_searchByIdTicket
 	@pId INT
@@ -331,8 +336,8 @@ AS
 		   destino AS Destino,horaPartida AS horaSalida,horaLlegada AS horaLlegada, price AS precio
 	FROM Flight WHERE idFlight = @pId OR destino LIKE '%'+@pDestino+'%'
 END
-GO
 
+GO
 CREATE PROCEDURE sp_searchClienteByIdORNombre
 	@pId varchar (50),
 	@pNombre varchar (50)
@@ -342,8 +347,8 @@ AS
 		   email AS email, phone AS telefono, clientState AS estado, clientType AS tipoCliente, miles AS millas
 	FROM Client WHERE id = @pId OR name LIKE '%'+@pNombre+'%'
 END
-GO
 
+GO
 CREATE PROCEDURE sp_listaAsientosReservados
 	@pIdFlight int
 AS
@@ -351,4 +356,4 @@ BEGIN
 	SELECT numSeat AS asiento	
 	FROM Ticket	WHERE idFlight = @pIdFlight
 END
-GO
+
