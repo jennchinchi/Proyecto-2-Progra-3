@@ -11,8 +11,8 @@
 //----Encargado: Jenniffer Chinchilla Porras
 //----Llave cambio =*capadatos
 
-//----Fecha creación: 15-08-2015
-//----Descripción: Agregar boton de cancelar 
+//----Fecha creación: 15-08-2015 // 16-08-2015
+//----Descripción: Agregar boton de cancelar // Texto en inglés
 //----Encargado: Ronald Moreira Artavia
 //----Llave cambio = camb_Bt_Cancel
 
@@ -233,8 +233,8 @@ namespace Presentacion
         {
             try
             {
-                DialogResult respuesta = MessageBox.Show("Confirmación de salida.",
-                                                         "Confirmación",
+                DialogResult respuesta = MessageBox.Show("Are you sure?.",
+                                                         "Confirmation",
                                                          MessageBoxButtons.YesNo,
                                                          MessageBoxIcon.Question);
 
@@ -246,7 +246,7 @@ namespace Presentacion
 
             catch
             {
-                MessageBox.Show("ERROR: Hay un problema al cerrar pantalla, contacte al administrador.",
+                MessageBox.Show("ERROR: There is a problem closing screen, contact your administrator.",
                                 "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } // Fin catch
 
