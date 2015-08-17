@@ -5,6 +5,12 @@
 //----Descripción: Creación estructura módulo vuelo
 //----Encargado: -Jenniffer Chinchilla Porras
 //----Llave cambio = *creavuelo
+
+//----Fecha creación: 16-08-2015
+//----Descripción: Inclusion de nuevos métodos, eliminarVueloPrueba, 
+//----buscarVueloPrueba para pruebas unitarias
+//----Encargado: -Jenniffer Chinchilla Porras
+//----Llave cambio = *unittest
 /*------------------------------------------------------------
 ---------------- HISTORIAL DE MODIFICACION -----------------
 ------------------------------------------------------------*/
@@ -16,15 +22,18 @@ using System.Threading.Tasks;
 using LogicaNegocios;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.Linq;
+using System.Data.Linq.Mapping;
 
 namespace AccesoDatos
 {
     public class VueloDaImpl : IVueloDa
     {
+        MyConnection myConnection = new MyConnection();
         //*creavuelo
         public string guardarVuelo(Vuelo vuelo)
         {
-            MyConnection myConnection = new MyConnection();
+            
             SqlConnection conexion = myConnection.CreateConnection();
             SqlCommand comando = myConnection.CreateCommand(conexion);
             string resultado;
@@ -109,8 +118,8 @@ namespace AccesoDatos
                     Vuelo creaVuelo = new Vuelo();
                     creaVuelo.IdVuelo = (int)vu["vuelo"];
                     creaVuelo.IdAvion = (int)vu["avion"];
-                    //creaVuelo.Origen = (string)vu["origen"];
-                    //creaVuelo.Destino = (string)vu["destino"];
+                    creaVuelo.Origen = (string)vu["origen"];
+                    creaVuelo.Destino = (string)vu["destino"];
                     creaVuelo.DisplayOrigen = (string)vu["origenDisplay"];
                     creaVuelo.DisplayDestino = (string)vu["destinoDisplay"];
                     creaVuelo.HoraPartida = (string)vu["horaSalida"];
@@ -238,6 +247,35 @@ namespace AccesoDatos
                 conexion.Close();
             }
             return asientos;
+        }
+        //*unittest
+        public void eliminarVueloPrueba() 
+        {
+            DataContext datacontext = new DataContext(myConnection.SQLConnection);
+            var table = datacontext.GetTable<Vuelo>();
+            var result = from vuelo in table
+                         where vuelo.HoraPartida == "Prueba unitaria"
+                              select vuelo;
+            foreach (Vuelo delete in result)
+            {
+                table.DeleteOnSubmit(delete);
+                datacontext.SubmitChanges();
+            }
+        }
+        //*unittest
+        public Vuelo buscarVueloPrueba()
+        {
+            Vuelo returnVuelo = new Vuelo();
+            DataContext datacontext = new DataContext(myConnection.SQLConnection);
+            var table = datacontext.GetTable<Vuelo>();
+            var result = from vuelo in table
+                         where vuelo.HoraPartida == "Prueba unitaria"
+                         select vuelo;
+            foreach (Vuelo delete in result)
+            {
+                returnVuelo = delete;
+            }
+            return returnVuelo;
         }
     }
 }

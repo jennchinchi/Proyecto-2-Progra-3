@@ -5,6 +5,12 @@
 //----Descripción: Creación estructura módulo vuelos
 //----Encargado: -Jenniffer Chinchilla Porras
 //----Llave cambio = *creavuelo
+
+//----Fecha creación: 16-08-2015
+//----Descripción: Inclusion de nuevos métodos, eliminarVueloPrueba, 
+//----buscarVueloPrueba para pruebas unitarias
+//----Encargado: -Jenniffer Chinchilla Porras
+//----Llave cambio = *unittest
 /*------------------------------------------------------------
 ---------------- HISTORIAL DE MODIFICACION -----------------
 ------------------------------------------------------------*/
@@ -31,6 +37,9 @@ namespace AccesoDatos
         List<Vuelo> buscarVuelosPorIdoDestino(int idVuelo, string destino);
         //*creavuelo
         List<int> listaAsientosReservados(int idVuelo);
-
+        //*unittest
+        void eliminarVueloPrueba();
+        //*unittest
+        Vuelo buscarVueloPrueba();
     }
 }

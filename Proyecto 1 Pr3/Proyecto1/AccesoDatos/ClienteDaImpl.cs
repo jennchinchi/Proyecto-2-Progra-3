@@ -6,11 +6,17 @@
 //----Encargado: Roberto Mora Castro
 //----Llave cambio = *creacliente
 
-//----Fecha creación: 27-06-2014
+//----Fecha creación: 27-06-2015
 //----Descripción: Inclusion de nuevos métodos, listarClientesPorIDoNombre
 //----para busquedas en el listview
 //----Encargado: -Jenniffer Chinchilla Porras
 //----Llave cambio = *listview
+
+//----Fecha creación: 16-08-2015
+//----Descripción: Inclusion de nuevos métodos, eliminarClientePrueba, 
+//----buscarClientePrueba para pruebas unitarias
+//----Encargado: -Jenniffer Chinchilla Porras
+//----Llave cambio = *unittest
 /*------------------------------------------------------------
 ---------------- HISTORIAL DE MODIFICACION -----------------
 ------------------------------------------------------------*/
@@ -27,6 +33,7 @@ namespace AccesoDatos
 {
     public class ClienteDaImpl : IClienteDa
     {
+        MyConnection myConnection = new MyConnection();
         //*creacliente
         public Cliente definirTipoCliente(string tipo)
         {
@@ -263,6 +270,35 @@ namespace AccesoDatos
             //    conexion.Close();
             //}
             return listaCliente;
+        }
+        //*unittest
+        public void eliminarClientePrueba()
+        {
+            DataContext datacontext = new DataContext(myConnection.SQLConnection);
+            var table = datacontext.GetTable<ClienteRegular>();
+            var result = from cliente in table
+                         where cliente.Nombre == "Prueba unitaria"
+                         select cliente;
+            foreach (ClienteRegular delete in result)
+            {
+                table.DeleteOnSubmit(delete);
+                datacontext.SubmitChanges();
+            }
+        }
+        //*unittest
+        public Cliente buscarClientePrueba()
+        {
+            Cliente returnCliente = new ClienteRegular();
+            DataContext datacontext = new DataContext(myConnection.SQLConnection);
+            var table = datacontext.GetTable<ClienteRegular>();
+            var result = from cliente in table
+                         where cliente.Nombre == "Prueba unitaria"
+                         select cliente;
+            foreach (Cliente delete in result)
+            {
+                returnCliente = delete;
+            }
+            return returnCliente;
         }
     }
 }

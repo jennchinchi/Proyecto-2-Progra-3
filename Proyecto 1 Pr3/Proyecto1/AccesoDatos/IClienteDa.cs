@@ -11,6 +11,12 @@
 //----para busquedas en el listview
 //----Encargado: -Jenniffer Chinchilla Porras
 //---- Llave cambio = *listview
+
+//----Fecha creación: 16-08-2015
+//----Descripción: Inclusion de nuevos métodos, eliminarClientePrueba, 
+//----buscarClientePrueba para pruebas unitarias
+//----Encargado: -Jenniffer Chinchilla Porras
+//----Llave cambio = *unittest
 /*------------------------------------------------------------
 ---------------- HISTORIAL DE MODIFICACION -----------------
 ------------------------------------------------------------*/
@@ -35,5 +41,9 @@ namespace AccesoDatos
         Cliente buscarporId(int idCliente);
         // *listview
         List<Cliente> listarClientesPorIdONombre(string id, string nombre);
+        //*unittest
+        void eliminarClientePrueba();
+        //*unittest
+        Cliente buscarClientePrueba();
     }
 }

@@ -12,6 +12,12 @@
 //----cliente y vuelo para hacer la consulta con linq
 //----Encargado: -Jenniffer Chinchilla Porras
 //----Llave cambio = *camblinqticket
+
+//----Fecha creación: 16-08-2015
+//----Descripción: Inclusion de nuevos métodos, eliminarTiquetePrueba, 
+//----buscarTiquetePrueba para pruebas unitarias
+//----Encargado: -Jenniffer Chinchilla Porras
+//----Llave cambio = *unittest
 /*------------------------------------------------------------
 ---------------- HISTORIAL DE MODIFICACION -----------------
 ------------------------------------------------------------*/
@@ -31,6 +37,7 @@ namespace AccesoDatos
 {
     public class TiqueteDaImpl : ITiqueteDa
     {
+        MyConnection myConnection = new MyConnection();
         //*creaticket
         public string guardarTiquete(Tiquete tiquete)
         {
@@ -241,6 +248,35 @@ namespace AccesoDatos
             //    conexion.Close();
             //}
             return listaTiquete;
+        }
+        //*unittest
+        public void eliminarTiquetePrueba()
+        {
+            DataContext datacontext = new DataContext(myConnection.SQLConnection);
+            var table = datacontext.GetTable<Tiquete>();
+            var result = from tiquete in table
+                         where tiquete.Moneda == 3
+                         select tiquete;
+            foreach (Tiquete delete in result)
+            {
+                table.DeleteOnSubmit(delete);
+                datacontext.SubmitChanges();
+            }
+        }
+        //unittes
+        public Tiquete buscarTiquetePrueba()
+        {
+            Tiquete returnTiquete = new Tiquete();
+            DataContext datacontext = new DataContext(myConnection.SQLConnection);
+            var table = datacontext.GetTable<Tiquete>();
+            var result = from tiquete in table
+                         where tiquete.Moneda == 3
+                         select tiquete;
+            foreach (Tiquete delete in result)
+            {
+                returnTiquete = delete;
+            }
+            return returnTiquete;
         }
 
     }
