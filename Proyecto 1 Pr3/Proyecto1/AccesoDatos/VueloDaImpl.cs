@@ -116,8 +116,8 @@ namespace AccesoDatos
                     Vuelo creaVuelo = new Vuelo();
                     creaVuelo.IdVuelo = (int)vu["vuelo"];
                     creaVuelo.IdAvion = (int)vu["avion"];
-                    //creaVuelo.Origen = (string)vu["origen"];
-                    //creaVuelo.Destino = (string)vu["destino"];
+                    creaVuelo.Origen = (string)vu["origen"];
+                    creaVuelo.Destino = (string)vu["destino"];
                     creaVuelo.DisplayOrigen = (string)vu["origenDisplay"];
                     creaVuelo.DisplayDestino = (string)vu["destinoDisplay"];
                     creaVuelo.HoraPartida = (string)vu["horaSalida"];
@@ -173,17 +173,17 @@ namespace AccesoDatos
 
             DataContext datacontext = new DataContext(myConnection.SQLConnection);
 
-            var Table = datacontext.GetTable<List<Vuelo>>();
+            var Table = datacontext.GetTable<Vuelo>();
 
 
             try
             {
                 var buscarPorIdDestino = from vueloId in Table
-                                         where vueloId.IdVuelo == id && vueloId.Destino == destino
+                                         where vueloId.IdVuelo == id || vueloId.Destino == destino
                                          select vueloId;
-                foreach (List<Vuelo> v in buscarPorIdDestino)
+                foreach (Vuelo v in buscarPorIdDestino)
                 {
-                    listaVuelos = v;
+                    listaVuelos.Add(v);
                 }
 
             }
