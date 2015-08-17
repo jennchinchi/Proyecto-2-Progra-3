@@ -55,6 +55,7 @@
             this.bindingSalida = new System.Windows.Forms.BindingSource(this.components);
             this.bindingDestino = new System.Windows.Forms.BindingSource(this.components);
             this.btnTrayectoria = new System.Windows.Forms.Button();
+            this.bt_Cancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingAviones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSalida)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingDestino)).BeginInit();
@@ -298,12 +299,23 @@
             this.btnTrayectoria.UseVisualStyleBackColor = true;
             this.btnTrayectoria.Click += new System.EventHandler(this.btnTrayectoria_Click);
             // 
+            // bt_Cancel
+            // 
+            this.bt_Cancel.BackgroundImage = global::Presentacion.Properties.Resources.Cancel;
+            this.bt_Cancel.Location = new System.Drawing.Point(667, 348);
+            this.bt_Cancel.Name = "bt_Cancel";
+            this.bt_Cancel.Size = new System.Drawing.Size(103, 28);
+            this.bt_Cancel.TabIndex = 127;
+            this.bt_Cancel.UseVisualStyleBackColor = true;
+            this.bt_Cancel.Click += new System.EventHandler(this.bt_Cancel_Click);
+            // 
             // BuscarVuelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Presentacion.Properties.Resources.proyecto_sitemas_search;
             this.ClientSize = new System.Drawing.Size(800, 410);
+            this.Controls.Add(this.bt_Cancel);
             this.Controls.Add(this.btnTrayectoria);
             this.Controls.Add(this.cmboSalida);
             this.Controls.Add(this.cmboDestino);
@@ -363,5 +375,6 @@
         private System.Windows.Forms.BindingSource bindingSalida;
         private System.Windows.Forms.BindingSource bindingDestino;
         private System.Windows.Forms.Button btnTrayectoria;
+        private System.Windows.Forms.Button bt_Cancel;
     }
 }

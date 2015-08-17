@@ -19,3 +19,4 @@ C:\Users\rober\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\Acc
 C:\Users\rober\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\AccesoDatos\bin\Debug\LogicaNegocios.pdb
 C:\Users\rober\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\AccesoDatos\obj\Debug\AccesoDatos.dll
 C:\Users\rober\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\AccesoDatos\obj\Debug\AccesoDatos.pdb
+C:\Users\Ronald\Documents\GitHub\Proyectos\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\AccesoDatos\obj\Debug\AccesoDatos.csprojResolveAssemblyReference.cache

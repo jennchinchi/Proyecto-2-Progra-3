@@ -10,6 +10,12 @@
 //---- capa de datos 
 //----Encargado: Jenniffer Chinchilla Porras
 //----Llave cambio = *capadatos
+
+//----Fecha creación: 15-08-2015
+//----Descripción: Agregar boton de cancelar 
+//----Encargado: Ronald Moreira Artavia
+//----Llave cambio = camb_Bt_Cancel
+
 /*--------------------------------------------------------------
 ---------------FIN HISTORIAL DE MODIFICACION ---------------
 ------------------------------------------------------------*/
@@ -81,6 +87,29 @@ namespace Presentacion
 
         private void button8_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void bt_Cancel_Click(object sender, EventArgs e) //camb_Bt_Cancel
+        {
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("Confirmación de salida.",
+                                                         "Confirmación",
+                                                         MessageBoxButtons.YesNo,
+                                                         MessageBoxIcon.Question);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    this.Close();
+                } // Fin if
+            } // Fin try
+
+            catch
+            {
+                MessageBox.Show("ERROR: Hay un problema al cerrar pantalla, contacte al administrador.",
+                                "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } // Fin catch
 
         }
     }

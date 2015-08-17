@@ -9,6 +9,12 @@
 //----Fecha creación: 19-06-2015
 //----Descripción: Modificacion de clase para probar cambios
 //----Encargado: -Jenniffer Chinchilla Porras
+
+//----Fecha: 09-08-2015
+//----Descripción: Cambios en el string sqlConnection, para probar cambios
+//----Encargado: -Ronald Moreira Artavia
+//----Llave= cambConexion
+
 /*------------------------------------------------------------
 ---------------- HISTORIAL DE MODIFICACION -----------------
 ------------------------------------------------------------*/
@@ -25,7 +31,8 @@ namespace AccesoDatos
 {
     public class MyConnection
     {//    private string sqlConnection = "Data Source=DESKTOP-ROBERTO;Initial Catalog=Flights;User ID=sa;Password=123456";
-        private string sqlConnection = "Data Source=NANI\\SQLEXPRESS;Initial Catalog=Flights; User ID=user;Password=123456";
+        //private string sqlConnection = "Data Source=NANI\\SQLEXPRESS;Initial Catalog=Flights; User ID=user;Password=123456";
+        private string sqlConnection = "Data Source=FITA-LAP;Initial Catalog=Flights; User ID=user;Password=123456";//cambConexion
         //*conexion
         public string SQLConnection
         {

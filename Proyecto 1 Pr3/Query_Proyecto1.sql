@@ -10,6 +10,12 @@
 ----Descripción: Creación de tablas tiquete,vuelo,avion y
 ---- sus respectivos store procedures
 ----Encargado: Jenniffer Chinchilla Porras
+
+----Fecha creación: 09-08-2015
+----Descripción: Cambio en la tabla Flight, columna price de money a float y agregar el GO en el SP
+----Encargado: Ronald Moreira Artavia
+----Llave= cambPriceFloat
+
 --------------------------------------------------------------
 ---------------FIN HISTORIAL DE MODIFICACION ---------------
 ------------------------------------------------------------
@@ -63,7 +69,7 @@ CREATE TABLE Flight
 		destino  varchar (50),
 		horaPartida  varchar (50),
 		horaLlegada  varchar (50),
-		price money NOT NULL
+		price float NOT NULL --cambPriceFloat
 );
 
 CREATE TABLE Place
@@ -143,7 +149,7 @@ CREATE PROCEDURE sp_RegisterFlight
 	@destino varchar(50),
 	@horaPartida varchar(50),
 	@horaLlegada varchar(50),
-    @price money
+    @price float --cambPriceFloat
 AS 
 BEGIN
 	INSERT INTO Flight (idPlane,origen,destino,horaPartida,horaLlegada, price)
@@ -206,7 +212,7 @@ CREATE PROCEDURE sp_UpdateFlight
 	@destino varchar(50),
 	@horaPartida varchar(50),
 	@horaLlegada varchar(50),
-    @price money
+    @price float --cambPriceFloat
 AS 
 	BEGIN
 	UPDATE Flight

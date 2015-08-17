@@ -184,7 +184,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Cancel.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BOTONES_011.png" />
   </ItemGroup>

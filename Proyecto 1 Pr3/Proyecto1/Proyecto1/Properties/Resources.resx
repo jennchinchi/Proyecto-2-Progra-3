@@ -118,38 +118,38 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="BOTONES_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BOTONES_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BOTONES_011" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BOTONES_011.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BOTONES_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BOTONES_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="proyecto_sitemaBOTONES_04" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\proyecto-sitemaBOTONES_04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MODIFY" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MODIFY.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="proyecto_sitemaBOTONES_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\proyecto-sitemaBOTONES_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="proyecto_sitemaBOTONES_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\proyecto-sitemaBOTONES_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="proyecto_sitemaBOTONES_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\proyecto-sitemaBOTONES_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="proyecto_sitemaBOTONES_04" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\proyecto-sitemaBOTONES_04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="proyecto_sitemaBOTONES_05" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\proyecto-sitemaBOTONES_05.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="proyecto_sitemas_boton_ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\proyecto-sitemas-boton-ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="proyecto_sitemaBOTONES_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\proyecto-sitemaBOTONES_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="proyecto_sitemas_tickets" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\proyecto-sitemas-tickets.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BOTONES_011" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BOTONES_011.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="proyecto_sitemaBOTONES_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\proyecto-sitemaBOTONES_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="proyecto_sitemas_flights" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\proyecto-sitemas-flights.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sdsdc_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdsdc_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="proyecto_sitemas_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\proyecto-sitemas-search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="proyecto_sitemas_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\proyecto-sitemas-login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,13 +157,16 @@
   <data name="proyecto_sitemas_register" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\proyecto-sitemas-register.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="proyecto_sitemas_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\proyecto-sitemas-search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BOTONES_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BOTONES_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="proyecto_sitemas_tickets" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\proyecto-sitemas-tickets.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BOTONES_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BOTONES_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sdsdc_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sdsdc_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="proyecto_sitemas_boton_ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\proyecto-sitemas-boton-ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
