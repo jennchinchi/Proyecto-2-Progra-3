@@ -7,7 +7,7 @@
 //----Llave cambio = *creavuelo
 
 //----Fecha: 15-08-2015 // 17-08-2015
-//----Descripción: Modifican los metodos de buscarVuelos // Modificación de public List<Vuelo> listarVuelos()
+//----Descripción: Modifican los metodos de buscarVuelos // Modificación de public List<Vuelo> listarVuelos() 
 //----Encargado: -Ronald Moreira Artavia
 //----Llave= cambBuscar // camblistarVuelos
 
@@ -97,33 +97,48 @@ namespace AccesoDatos
             return resultado;
         }
         //*creavuelo
-        public List<Vuelo> listarVuelos() // camblistarVuelos
+
+        public List<Vuelo> listarVuelos()
         {
             List<Vuelo> listaVuelos = new List<Vuelo>();
             MyConnection myConnection = new MyConnection();
+            SqlConnection conexion = myConnection.CreateConnection();
+            SqlCommand comando = myConnection.CreateCommand(conexion);
+            SqlDataReader vu;
 
-            DataContext datacontext = new DataContext(myConnection.SQLConnection);
-
-            var Table = datacontext.GetTable<Vuelo>();
-            
+            comando.CommandText = "sp_listFlights2";
+            comando.CommandType = CommandType.StoredProcedure;
             try
             {
-                var listaVuelo = from listVuelo in Table
-                                 select listVuelo;
-
-                    foreach (Vuelo v in listaVuelo)
+                conexion.Open();
+                vu = comando.ExecuteReader();
+                while (vu.Read())
                 {
-                    listaVuelos.Add(v);
-                }
+                    Vuelo creaVuelo = new Vuelo();
+                    creaVuelo.IdVuelo = (int)vu["vuelo"];
+                    creaVuelo.IdAvion = (int)vu["avion"];
+                    creaVuelo.Origen = (string)vu["origen"];
+                    creaVuelo.Destino = (string)vu["destino"];
+                    creaVuelo.DisplayOrigen = (string)vu["origenDisplay"];
+                    creaVuelo.DisplayDestino = (string)vu["destinoDisplay"];
+                    creaVuelo.HoraPartida = (string)vu["horaSalida"];
+                    creaVuelo.HoraLlegada = (string)vu["horaLlegada"];
+                    creaVuelo.Precio = double.Parse(vu["precio"].ToString());
+                    listaVuelos.Add(creaVuelo);
 
                 }
-            catch (Exception ex)
+            }
+            catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
-
+            finally
+            {
+                conexion.Close();
+            }
             return listaVuelos;
         }
+
             
         //*creavuelo
         public Vuelo buscarporId(int idVuelo) //cambBuscar
