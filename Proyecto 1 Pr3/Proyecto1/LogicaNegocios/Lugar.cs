@@ -36,28 +36,28 @@ namespace LogicaNegocios
         private string longitud;
         #endregion
         ////LINQtoSQL lugar
-         [Column(Name = "Longitud")]
+         [Column(Name = "longitude")]
         public string Longitud
         {
             get { return longitud; }
             set { longitud = value; }
         }
          ////LINQtoSQL lugar
-         [Column(Name = "Latitud")]
+         [Column(Name = "latitude")]
         public string Latitud
         {
             get { return latitud; }
             set { latitud = value; }
         }
          ////LINQtoSQL lugar
-         [Column(Name = "Nombre")]
+         [Column(Name = "name")]
         public string Nombre
         {
             get { return nombre; }
             set { nombre = value; }
         }
          ////LINQtoSQL lugar
-        [Column(Name = "IdLugar", IsPrimaryKey = true, DbType = "int NOT NULL", IsDbGenerated = true)]
+        [Column(Name = "idPlace", IsPrimaryKey = true, DbType = "int NOT NULL", IsDbGenerated = true)]
         public int IdLugar
         {
             get { return idLugar; }

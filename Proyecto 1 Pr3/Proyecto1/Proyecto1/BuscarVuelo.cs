@@ -112,11 +112,11 @@ namespace Presentacion
             selectedV.HoraLlegada = dtHoraLlegada.Text;
             selectedV.HoraPartida = dtHoraSalida.Text;
             selectedV.IdAvion = (int)cboPlanes.SelectedValue;
-            selectedV.Precio = double.Parse(txtPrecio.Text);
+            selectedV.Precio = float.Parse(txtPrecio.Text);
             string resultado = Gestor.modificarVuelo(selectedV);
             if (resultado.Equals("True"))
             {
-                MessageBox.Show("FLIGHT ADDED", "UAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("FLIGHT UPDATED", "UAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnBuscar_Click(null, null);
             }
             else

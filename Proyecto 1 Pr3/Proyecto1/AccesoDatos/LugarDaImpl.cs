@@ -41,7 +41,7 @@ namespace AccesoDatos
         {
             Lugar lu = new Lugar(); // se crea la instancia de la lista que va a contener la tabla lugar
             MyConnection myConnection = new MyConnection();//instancia de la conexion
-            DataContext datacontext = new DataContext(myConnection.SQLConnection)// instancia de datacontex y se pasa la conexion del servidor
+            DataContext datacontext = new DataContext(myConnection.SQLConnection);// instancia de datacontex y se pasa la conexion del servidor
             var table = datacontext.GetTable<Lugar>();// se asigna la conexion a una variable la cual contiene toda la tabla
 
             //MyConnection myConnection = new MyConnection();

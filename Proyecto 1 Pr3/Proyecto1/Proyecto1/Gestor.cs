@@ -57,7 +57,7 @@ namespace Presentacion
             v.Destino = destino;
             v.HoraPartida = horaPartida;
             v.HoraLlegada = horaLlegada;
-            v.Precio = double.Parse(precio);
+            v.Precio = float.Parse(precio);
             return vueloAD.guardarVuelo(v);
         }
         //*crearestor

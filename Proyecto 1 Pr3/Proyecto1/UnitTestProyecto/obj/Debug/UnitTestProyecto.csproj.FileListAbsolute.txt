@@ -1,0 +1,9 @@
+C:\Users\Jenn\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\UnitTestProyecto\obj\Debug\UnitTestProyecto.csprojResolveAssemblyReference.cache
+C:\Users\Jenn\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\UnitTestProyecto\bin\Debug\UnitTestProyecto.dll
+C:\Users\Jenn\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\UnitTestProyecto\bin\Debug\UnitTestProyecto.pdb
+C:\Users\Jenn\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\UnitTestProyecto\bin\Debug\AccesoDatos.dll
+C:\Users\Jenn\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\UnitTestProyecto\bin\Debug\LogicaNegocios.dll
+C:\Users\Jenn\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\UnitTestProyecto\bin\Debug\AccesoDatos.pdb
+C:\Users\Jenn\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\UnitTestProyecto\bin\Debug\LogicaNegocios.pdb
+C:\Users\Jenn\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\UnitTestProyecto\obj\Debug\UnitTestProyecto.dll
+C:\Users\Jenn\Documents\GitHub\Proyecto-2-Progra-3\Proyecto 1 Pr3\Proyecto1\UnitTestProyecto\obj\Debug\UnitTestProyecto.pdb

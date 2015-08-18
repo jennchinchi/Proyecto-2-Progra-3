@@ -1,24 +1,10 @@
-﻿/*------------------------------------------------------------
----------------- HISTORIAL DE MODIFICACION -----------------
-------------------------------------------------------------*/
-//----Fecha creación: 16-08-2015
-//----Descripción: Creación de pruebas unitarias
-//----Encargado: Jenniffer Chinchilla
-//----Llave cambio = *unittest
-/*------------------------------------------------------------
----------------- HISTORIAL DE MODIFICACION -----------------
-------------------------------------------------------------*/
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Presentacion;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LogicaNegocios;
 using AccesoDatos;
 
-namespace UnitTestProject
+namespace UnitTestProyecto
 {
     [TestClass()]
     public class GestorTests
@@ -33,7 +19,7 @@ namespace UnitTestProject
         public void buscarAvionPorIdTest()
         {
             Avion a = avionAD.buscarAvionPorId(1);
-            Assert.Equals(a.Marca, "Taca");
+            Assert.AreEqual(a.Marca, "Taca");
         }
         //*unittest
         [TestMethod()]
@@ -47,7 +33,7 @@ namespace UnitTestProject
         public void buscarLugarPorIdTest()
         {
             Lugar l = lugarAD.buscarLugarPorId(1);
-            Assert.Equals(l.Nombre, "San Francisco California, EEUU");
+            Assert.AreEqual(l.Nombre, "San Francisco California, EEUU");
         }
         //*unittest
         [TestMethod()]
@@ -68,7 +54,7 @@ namespace UnitTestProject
             v.HoraLlegada = "jueves, 9 de julio de 2015";
             v.Precio = 99;
             string resultado = vueloAD.guardarVuelo(v);
-            Assert.Equals(resultado, "True");
+            Assert.AreEqual(resultado, "True");
             if (resultado == "True")
             {
                 vueloAD.eliminarVueloPrueba();
@@ -101,7 +87,7 @@ namespace UnitTestProject
                 buscar = vueloAD.buscarVueloPrueba();
                 buscar.HoraLlegada = "Prueba Unitaria modificar";
                 string resultadoM = vueloAD.modificarVuelo(buscar);
-                Assert.Equals(resultadoM, "True");
+                Assert.AreEqual(resultadoM, "True");
                 if (resultadoM == "True")
                 {
                     vueloAD.eliminarVueloPrueba();
@@ -113,15 +99,16 @@ namespace UnitTestProject
         public void agregarClienteTest()
         {
             Cliente cl = new ClienteRegular();
+            cl.Id = "Prueba";
             cl.Nombre = "Prueba Unitaria";
             cl.Apellido = "Prueba";
             cl.Email = "email@hotmail.com";
             cl.Telefono = "99999999";
             cl.Estado = "Inactive";
-            cl.TipoCliente = "Inactive";
+            cl.TipoCliente = "Regular";
             cl.Millas = 1000;
             string resultado = clienteAD.guardarCliente(cl);
-            Assert.Equals(resultado, "True");
+            Assert.AreEqual(resultado, "True");
             if (resultado == "True")
             {
                 clienteAD.eliminarClientePrueba();
@@ -139,6 +126,7 @@ namespace UnitTestProject
         public void modificarClienteTest()
         {
             Cliente cl = new ClienteRegular();
+            cl.Id = "Prueba";
             cl.Nombre = "Prueba Unitaria";
             cl.Apellido = "Proyecto";
             cl.Email = "email@hotmail.com";
@@ -147,14 +135,14 @@ namespace UnitTestProject
             cl.TipoCliente = "Regular";
             cl.Millas = 1000;
             string resultado = clienteAD.guardarCliente(cl);
-            Assert.Equals(resultado, "True");
+            Assert.AreEqual(resultado, "True");
             if (resultado == "True")
             {
                 Cliente buscar = new ClienteRegular();
                 buscar = clienteAD.buscarClientePrueba();
                 buscar.Apellido = "Prueba Unitaria modificar";
                 string resultadoM = clienteAD.modificarCliente(buscar);
-                Assert.Equals(resultadoM, "True");
+                Assert.AreEqual(resultadoM, "True");
                 if (resultadoM == "True")
                 {
                     clienteAD.eliminarClientePrueba();
@@ -186,7 +174,7 @@ namespace UnitTestProject
             ti.IdVuelo = 1;
             ti.Asiento = 45;
             string resultado = tiqueteAD.guardarTiquete(ti);
-            Assert.Equals(resultado, "True");
+            Assert.AreEqual(resultado, "True");
             if (resultado == "True")
             {
                 tiqueteAD.eliminarTiquetePrueba();
@@ -210,14 +198,14 @@ namespace UnitTestProject
             ti.IdVuelo = 1;
             ti.Asiento = 45;
             string resultado = tiqueteAD.guardarTiquete(ti);
-            Assert.Equals(resultado, "True");
+            Assert.AreEqual(resultado, "True");
             if (resultado == "True")
             {
                 Tiquete buscar = new Tiquete();
                 buscar = tiqueteAD.buscarTiquetePrueba();
                 buscar.Estado = "Prueba Unitaria modificar";
                 string resultadoM = tiqueteAD.modificarTiquete(buscar);
-                Assert.Equals(resultadoM, "True");
+                Assert.AreEqual(resultadoM, "True");
                 if (resultadoM == "True")
                 {
                     tiqueteAD.eliminarTiquetePrueba();
@@ -226,4 +214,3 @@ namespace UnitTestProject
         }
     }
 }
-

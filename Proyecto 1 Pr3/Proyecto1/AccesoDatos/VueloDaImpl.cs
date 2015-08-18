@@ -6,16 +6,10 @@
 //----Encargado: -Jenniffer Chinchilla Porras
 //----Llave cambio = *creavuelo
 
-//----Fecha creación: 16-08-2015
-//----Descripción: Inclusion de nuevos métodos, eliminarVueloPrueba, 
-//----buscarVueloPrueba para pruebas unitarias
-//----Encargado: -Jenniffer Chinchilla Porras
-//----Llave cambio = *unittest
-
-//----Fecha: 15-08-2015 // 17-08-2015
-//----Descripción: Modifican los metodos de buscarVuelos // Modificación de public List<Vuelo> listarVuelos() 
+//----Fecha: 15-08-2015
+//----Descripción: Modifican los metodos de buscarVuelos
 //----Encargado: -Ronald Moreira Artavia
-//----Llave= cambBuscar // camblistarVuelos
+//----Llave= cambBuscar
 
 /*------------------------------------------------------------
 ---------------- HISTORIAL DE MODIFICACION -----------------
@@ -29,7 +23,6 @@ using LogicaNegocios;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.Linq;
-using System.Data.Linq.Mapping;
 
 namespace AccesoDatos
 {
@@ -39,7 +32,6 @@ namespace AccesoDatos
         //*creavuelo
         public string guardarVuelo(Vuelo vuelo)
         {
-            
             SqlConnection conexion = myConnection.CreateConnection();
             SqlCommand comando = myConnection.CreateCommand(conexion);
             string resultado;
@@ -114,29 +106,21 @@ namespace AccesoDatos
             DataContext datacontext = new DataContext(myConnection.SQLConnection);
 
             var Table = datacontext.GetTable<Vuelo>();
+            var Table2 = datacontext.GetTable<Lugar>();
 
             try
             {
-                //conexion.Open();
-                //vu = comando.ExecuteReader();
-                //while (vu.Read())
-                //{
-                //    Vuelo creaVuelo = new Vuelo();
-                //    creaVuelo.IdVuelo = (int)vu["vuelo"];
-                //    creaVuelo.IdAvion = (int)vu["avion"];
-                //    creaVuelo.Origen = (string)vu["origen"];
-                //    creaVuelo.Destino = (string)vu["destino"];
-                //    creaVuelo.DisplayOrigen = (string)vu["origenDisplay"];
-                //    creaVuelo.DisplayDestino = (string)vu["destinoDisplay"];
-                //    creaVuelo.HoraPartida = (string)vu["horaSalida"];
-                //    creaVuelo.HoraLlegada = (string)vu["horaLlegada"];
-                //    creaVuelo.Precio = double.Parse(vu["precio"].ToString());
-                //    listaVuelos.Add(creaVuelo);
                 var listaVuelo = from listVuelo in Table
                                  select listVuelo;
 
                 foreach (Vuelo v in listaVuelo)
                 {
+                    v.DisplayOrigen = (from place in Table2
+                                      where (place.IdLugar == int.Parse(v.Origen))
+                                      select place.Nombre).Single();
+                    v.DisplayDestino = (from place in Table2
+                                       where (place.IdLugar == int.Parse(v.Destino))
+                                       select place.Nombre).Single();
                     listaVuelos.Add(v);
                 }
 
@@ -149,72 +133,41 @@ namespace AccesoDatos
             return listaVuelos;
         }
 
-            
+
         //*creavuelo
-        public Vuelo buscarporId(int idVuelo)
+        public Vuelo buscarporId(int idVuelo) //cambBuscar
         {
             Vuelo vuelo = new Vuelo();
             MyConnection myConnection = new MyConnection();
-            SqlConnection conexion = myConnection.CreateConnection();
-            SqlCommand comando = myConnection.CreateCommand(conexion);
-            SqlDataReader vu;
 
-            comando.CommandText = "sp_searchByIdFlight";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@pId ", idVuelo);
+            DataContext datacontext = new DataContext(myConnection.SQLConnection);
+
+            var Table = datacontext.GetTable<Vuelo>();
+
             try
             {
-                conexion.Open();
-                vu = comando.ExecuteReader();
-                while (vu.Read())
+                var buscarPorIdVuelo = from vueloId in Table
+                                       where vueloId.IdVuelo == idVuelo
+                                       select vueloId;
+                foreach (Vuelo v in buscarPorIdVuelo)
                 {
-                    vuelo.IdVuelo = (int)vu["vuelo"];
-                    vuelo.IdAvion = (int)vu["avion"];
-                    vuelo.Origen = (string)vu["origen"];
-                    vuelo.Destino = (string)vu["destino"];
-                    vuelo.HoraPartida = (string)vu["horaSalida"];
-                    vuelo.HoraLlegada = (string)vu["horaLlegada"];
-                    vuelo.Precio = double.Parse(vu["precio"].ToString());
+                    vuelo = v;
                 }
+
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            finally
-            {
-                conexion.Close();
-            }
+
             return vuelo;
         }
         //*creavuelo
-        public List<Vuelo> buscarVuelosPorIdoDestino(int id, string destino)
+        public List<Vuelo> buscarVuelosPorIdoDestino(int id, string destino)//cambBuscar
         {
             List<Vuelo> listaVuelos = new List<Vuelo>();
             MyConnection myConnection = new MyConnection();
-            SqlConnection conexion = myConnection.CreateConnection();
-            SqlCommand comando = myConnection.CreateCommand(conexion);
-            SqlDataReader vu;
 
-            //comando.CommandText = "sp_searchByIdFlightORDestino";
-            //comando.CommandType = CommandType.StoredProcedure;
-            //comando.Parameters.AddWithValue("@pId ", id);
-            //comando.Parameters.AddWithValue("@pDestino ", destino);
-            //try
-            //{
-            //    conexion.Open();
-            //    vu = comando.ExecuteReader();
-            //    while (vu.Read())
-            //    {
-            //        Vuelo creaVuelo = new Vuelo();
-            //        creaVuelo.IdVuelo = (int)vu["vuelo"];
-            //        creaVuelo.IdAvion = (int)vu["avion"];
-            //        creaVuelo.Origen = (string)vu["origen"];
-            //        creaVuelo.Destino = (string)vu["destino"];
-            //        creaVuelo.HoraPartida = (string)vu["horaSalida"];
-            //        creaVuelo.HoraLlegada = (string)vu["horaLlegada"];
-            //        creaVuelo.Precio = double.Parse(vu["precio"].ToString());
-            //        listaVuelos.Add(creaVuelo);
             DataContext datacontext = new DataContext(myConnection.SQLConnection);
 
             var Table = datacontext.GetTable<Vuelo>();
@@ -230,18 +183,15 @@ namespace AccesoDatos
                     listaVuelos.Add(v);
                 }
 
-                
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            finally
-            {
-                conexion.Close();
-            }
+
             return listaVuelos;
         }
+
         //*creavuelo
         public List<int> listaAsientosReservados(int idVuelo)
         {
@@ -251,6 +201,9 @@ namespace AccesoDatos
             SqlCommand comando = myConnection.CreateCommand(conexion);
             SqlDataReader at;
 
+            comando.CommandText = "sp_listaAsientosReservados";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@pIdFlight ", idVuelo);
             try
             {
                 conexion.Open();

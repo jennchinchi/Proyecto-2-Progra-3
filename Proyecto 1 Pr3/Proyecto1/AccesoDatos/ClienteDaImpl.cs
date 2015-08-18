@@ -275,11 +275,11 @@ namespace AccesoDatos
         public void eliminarClientePrueba()
         {
             DataContext datacontext = new DataContext(myConnection.SQLConnection);
-            var table = datacontext.GetTable<ClienteRegular>();
+            var table = datacontext.GetTable<Cliente>();
             var result = from cliente in table
-                         where cliente.Nombre == "Prueba unitaria"
+                         where cliente.Id == "Prueba"
                          select cliente;
-            foreach (ClienteRegular delete in result)
+            foreach (Cliente delete in result)
             {
                 table.DeleteOnSubmit(delete);
                 datacontext.SubmitChanges();
@@ -290,9 +290,9 @@ namespace AccesoDatos
         {
             Cliente returnCliente = new ClienteRegular();
             DataContext datacontext = new DataContext(myConnection.SQLConnection);
-            var table = datacontext.GetTable<ClienteRegular>();
+            var table = datacontext.GetTable<Cliente>();
             var result = from cliente in table
-                         where cliente.Nombre == "Prueba unitaria"
+                         where cliente.Id == "Prueba"
                          select cliente;
             foreach (Cliente delete in result)
             {
