@@ -98,44 +98,31 @@ namespace AccesoDatos
         }
         //*creavuelo
 
-        public List<Vuelo> listarVuelos()
+        public List<Vuelo> listarVuelos() // camblistarVuelos
         {
             List<Vuelo> listaVuelos = new List<Vuelo>();
             MyConnection myConnection = new MyConnection();
-            SqlConnection conexion = myConnection.CreateConnection();
-            SqlCommand comando = myConnection.CreateCommand(conexion);
-            SqlDataReader vu;
 
-            comando.CommandText = "sp_listFlights2";
-            comando.CommandType = CommandType.StoredProcedure;
+            DataContext datacontext = new DataContext(myConnection.SQLConnection);
+
+            var Table = datacontext.GetTable<Vuelo>();
+
             try
             {
-                conexion.Open();
-                vu = comando.ExecuteReader();
-                while (vu.Read())
-                {
-                    Vuelo creaVuelo = new Vuelo();
-                    creaVuelo.IdVuelo = (int)vu["vuelo"];
-                    creaVuelo.IdAvion = (int)vu["avion"];
-                    creaVuelo.Origen = (string)vu["origen"];
-                    creaVuelo.Destino = (string)vu["destino"];
-                    creaVuelo.DisplayOrigen = (string)vu["origenDisplay"];
-                    creaVuelo.DisplayDestino = (string)vu["destinoDisplay"];
-                    creaVuelo.HoraPartida = (string)vu["horaSalida"];
-                    creaVuelo.HoraLlegada = (string)vu["horaLlegada"];
-                    creaVuelo.Precio = double.Parse(vu["precio"].ToString());
-                    listaVuelos.Add(creaVuelo);
+                var listaVuelo = from listVuelo in Table
+                                 select listVuelo;
 
+                foreach (Vuelo v in listaVuelo)
+                {
+                    listaVuelos.Add(v);
                 }
+
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            finally
-            {
-                conexion.Close();
-            }
+
             return listaVuelos;
         }
 
